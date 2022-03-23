@@ -276,8 +276,8 @@ function loopsLookUp() {
 }
 
 functionsLookUP();
-// Arrow case means function is not hoisted
 function functionsLookUP() {
+  // Arrow case means function is not hoisted
   const addFunction = (a, b) => {
     return console.log(a + b);
   };
@@ -333,10 +333,50 @@ function functionsLookUP() {
 }
 
 mathLookUP();
-function mathLookUP() {}
+function mathLookUP() {
+  // Math constants that can be accessed as Math.properties
+  console.log(Math.E);
+  console.log(Math.PI);
+  console.log(Math.SQRT2);
+  console.log(Math.SQRT1_2);
+  console.log(Math.LN2);
+  console.log(Math.LN10);
+  console.log(Math.LOG2E);
+  console.log(Math.LOG10E);
+
+  // Math methods written as Math.method()
+  const num = 1234.5678910111213;
+  const numLine = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  console.log(Math.round(num));
+  console.log(Math.ceil(num));
+  console.log(Math.floor(num));
+  console.log(Math.trunc(num));
+  console.log(Math.sign(num));
+  console.log(Math.pow(10, 3));
+  console.log(Math.sqrt(64));
+  console.log(Math.abs(-5));
+  console.log(Math.sin((30 * Math.PI) / 180));
+  console.log(Math.cos((45 * Math.PI) / 180));
+  console.log(Math.max.apply(null, numLine));
+  console.log(Math.max(1,2,3,4,5,11231,12,123123));
+  console.log(Math.min(123123, 12312,123123,12,1));
+  console.log(Math.random());
+  console.log(Math.log(10));
+  console.log(Math.log2(4));
+  console.log(Math.log10(1000));
+  console.log(Math.floor(Math.random() * 10));
+
+  function rndInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  console.log(rndInt(10, 120));
+}
 
 datesLookUP();
-function datesLookUP() {}
+function datesLookUP() {
+  
+}
 
 arrayIterationsLookUP();
 function arrayIterationsLookUP() {}
