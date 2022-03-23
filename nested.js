@@ -69,3 +69,4 @@ const locations = {
 
 alert(JSON.stringify(Object.keys(locations[travelLocation])))
 alert(JSON.stringify(Object.values(locations[travelLocation])))
+alert(JSON.stringify(Object.values(locations[travelLocation])[2]))
