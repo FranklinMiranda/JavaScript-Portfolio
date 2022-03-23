@@ -276,7 +276,61 @@ function loopsLookUp() {
 }
 
 functionsLookUP();
-function functionsLookUP() {}
+// Arrow case means function is not hoisted
+function functionsLookUP() {
+  const addFunction = (a, b) => {
+    return console.log(a + b);
+  };
+  addFunction(1, 2);
+
+  // Function is hoisted
+  subtractFunction(10, 2);
+  function subtractFunction(a, b) {
+    return console.log(a - b);
+  }
+
+  // Functions passes as argument to other Functions
+  function greeting() {
+    return "Hello";
+  }
+  function phrase(message) {
+    return message();
+  }
+  console.log(phrase(greeting));
+
+  function greeting1() {
+    return "Hello";
+  }
+  function phrase1(message) {
+    return message;
+  }
+  console.log(phrase1(greeting1()));
+
+  function greeting2() {
+    return "Hello";
+  }
+  function greeting3() {
+    return "Bye";
+  }
+  function phrase2(message1, message2) {
+    console.log(message1());
+    return console.log(message2());
+  }
+  console.log(phrase2(greeting2, greeting3));
+
+  // Functions can return Function using a variable
+  const functionVar = () => {
+    return () => "Hello";
+  };
+  returnedFunction = functionVar();
+  console.log(returnedFunction());
+
+  // Functions can return a Function using double parentheses
+  const functionPar = () => {
+    return () => "Hello";
+  };
+  console.log(functionVar()());
+}
 
 mathLookUP();
 function mathLookUP() {}
