@@ -55,6 +55,7 @@ function stringsLookUp() {
   console.log(`This is a template literal ${temLit}`);
 }
 
+// Numbers
 numbersLookUp();
 function numbersLookUp() {
   const num0 = 5;
@@ -88,47 +89,203 @@ function numbersLookUp() {
   console.log(num3);
 }
 
-booleanLookUp();
-function booleanLookUp() {}
-
-arrayLookUp();
-function arrayLookUp() {
+// Arrays
+arraysLookUp();
+function arraysLookUp() {
   const cars = ["audi", "bmw", "ferrari", "honda", "toyota"];
-  const planets = ["mercury", "venus", "earth"]
+  const planets = ["mercury", "venus", "earth"];
   console.log(cars);
   console.log(cars[0]);
-  console.log(cars[cars.length - 1])
+  console.log(cars[cars.length - 1]);
   console.log(typeof cars);
-  console.log(cars.length)
-  console.log(Array.isArray(cars))
-  console.log(cars.toString())
+  console.log(cars.length);
+  console.log(Array.isArray(cars));
+  console.log(cars.toString());
 
-  cars.push("mercedes")
-  console.log(cars)
-  cars.pop()
-  console.log(cars)
+  cars.push("mercedes");
+  console.log(cars);
+  cars.pop();
+  console.log(cars);
 
-  cars.unshift("mercedes")
-  console.log(cars)
-  cars.shift()
-  console.log(cars)
+  cars.unshift("mercedes");
+  console.log(cars);
+  cars.shift();
+  console.log(cars);
 
-  console.log(cars.concat(planets))
-  const carplanet = cars.concat(planets)
-  
-  console.log(carplanet)
-  carplanet.splice(1, 2, "replace")
-  console.log(carplanet)
+  console.log(cars.concat(planets));
+  const carplanet = cars.concat(planets);
 
-  console.log(carplanet)
-  console.log(carplanet.slice(1, 4))
+  console.log(carplanet);
+  carplanet.splice(1, 2, "replace");
+  console.log(carplanet);
 
-  console.log(carplanet.includes("earth"))
-  
+  console.log(carplanet);
+  console.log(carplanet.slice(1, 4));
+
+  console.log(carplanet.includes("earth"));
+
+  carplanet.sort();
+  console.log(carplanet);
+  carplanet.reverse();
+  console.log(carplanet);
+
+  const ranLine = [9, 1, 7, 3, 2, 4, 5, 8, 6];
+
+  console.log(
+    ranLine.sort(function (a, b) {
+      return a - b;
+    })
+  );
+
+  console.log(
+    ranLine.sort(function (a, b) {
+      return b - a;
+    })
+  );
+
+  // Fisher Yates Random Sort Method
+  for (let i = ranLine.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * i);
+    let k = ranLine[i];
+    ranLine[i] = ranLine[j];
+    ranLine[j] = k;
+  }
+  console.log(ranLine);
+
+  console.log(Math.max.apply(null, ranLine));
+  console.log(Math.min.apply(null, ranLine));
+
+  const nestArr = [
+    [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
+    ],
+    [
+      [10, 11, 12],
+      [13, 14, 15],
+      [16, 17, 18],
+    ],
+    [
+      [19, 20, 21],
+      [22, 23, 24],
+      [25, 26, 27],
+    ],
+  ];
+  console.log(nestArr[2][0][2]);
+  console.log(nestArr[1][2][2]);
 }
 
-datesLookUp();
-function datesLookUp() {}
+// Conditionals
+conditionalsLookUp();
+function conditionalsLookUp() {
+  const result = 90;
+  const d = new Date().getDay();
 
-MathLookUp();
-function MathLookUp() {}
+  if (result === 100) {
+    console.log("perfect");
+  } else if (result >= 90) {
+    console.log(90);
+  } else {
+    console.log("Failed");
+  }
+
+  switch (result) {
+    default:
+      console.log("You failed");
+      break;
+    case 100:
+      console.log("perfect");
+      break;
+    case 90:
+      console.log("A");
+      break;
+  }
+
+  switch (d) {
+    case 0:
+      console.log("Sunday");
+      break;
+    case 1:
+      console.log("Monday");
+      break;
+    case 2:
+      console.log("Tuesday");
+      break;
+    case 3:
+      console.log("Wednesday");
+      break;
+    case 4:
+      console.log("Thursday");
+      break;
+    case 5:
+      console.log("Friday");
+      break;
+    case 6:
+      console.log("Saturday");
+      break;
+  }
+}
+
+loopsLookUp();
+function loopsLookUp() {
+  const samObj = { fname: "franklin", lname: "miranda" };
+  const samArr = ["bmw", "audi", "honda"];
+
+  for (let i = 0; i < 6; i++) {
+    console.log(i);
+  }
+
+  for (let property in samObj) {
+    console.log(property);
+    console.log(samObj[property]);
+  }
+
+  for (let value of samArr) {
+    console.log(value);
+  }
+
+  let i = 10;
+  while (i < 15) {
+    samArr.push(i);
+    i++;
+    console.log(samArr);
+  }
+  console.log(samArr);
+
+  const numLine = [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 12, 3, 4, 5];
+
+  do {
+    numLine.pop();
+    console.log(numLine);
+  } while (numLine.length > 5);
+
+  for (let i = 0; i < 18; i++) {
+    if (i === 2) {
+      break;
+    }
+    console.log(i);
+  }
+
+  for (let i = 0; i < 18; i++) {
+    if (i === 2) {
+      continue;
+    }
+    console.log(i);
+  }
+}
+
+functionsLookUP();
+function functionsLookUP() {}
+
+mathLookUP();
+function mathLookUP() {}
+
+datesLookUP();
+function datesLookUP() {}
+
+arrayIterationsLookUP();
+function arrayIterationsLookUP() {}
+
+nestedObjectsLookUP();
+function nestedObjectsLookUP() {}
