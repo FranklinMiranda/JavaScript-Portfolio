@@ -32,18 +32,18 @@ const nestedItem = {
   },
 };
 
-unNest()
+unNest();
 function unNest() {
-  let numbers = []
-  numbers.push(nestedItem.name.namename.namenamename[0].age)
-  numbers.push(nestedItem["name"]["namename"]["namenamename"][1]["height"])
-  numbers.push(nestedItem.name.namename.namenamename[1].weight)
-  console.log(numbers)
+  let numbers = [];
+  numbers.push(nestedItem.name.namename.namenamename[0].age);
+  numbers.push(nestedItem["name"]["namename"]["namenamename"][1]["height"]);
+  numbers.push(nestedItem.name.namename.namenamename[1].weight);
+  console.log(numbers);
   let result = 0;
   for (let i = 0; i < numbers.length; i++) {
-    result = result + numbers[i]
+    result = result + numbers[i];
   }
-  console.log(result)
+  console.log(result);
 }
 
 dotNotation();
