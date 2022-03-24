@@ -676,5 +676,4 @@ function jsHTMLLookUP() {
   document.getElementById('Id').style.size = '3px';
   document.getElementById('Id').style.display = 'none';
   document.getElementById('Id').style.display = 'block';
-
 }
