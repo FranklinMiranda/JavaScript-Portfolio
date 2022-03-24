@@ -276,7 +276,8 @@ function loopsLookUp() {
   }
 }
 
-// Functions
+// Functions 
+// TODO add recusion and Asynchronous examples
 functionsLookUP();
 function functionsLookUP() {
   // Arrow case means function is not hoisted
@@ -584,6 +585,60 @@ function arrayIterationsLookUP() {
   for (let x of keys) {
     console.log(x);
   }
+}
+
+// Objects
+objectsLookUp();
+function objectsLookUp() {
+  const string = `string`;
+  const string0 = "string";
+  console.log(typeof string);
+
+  console.log(string === string0);
+  console.log(string.length);
+
+  console.log(string.slice(2, 5));
+  console.log(string.slice(0, 5));
+  console.log(string.slice(-5, -2));
+  console.log(string.slice(-5, -4));
+
+  console.log(string.substring(1, 4));
+  console.log(string.substring(0, 4));
+  console.log(string.substring(1, 5));
+
+  const sentence1 = "This is a sentence.";
+  let newSentence = sentence1.replace("sentence", "paragraph");
+  console.log(sentence1);
+  console.log(newSentence);
+
+  console.log(newSentence.toUpperCase());
+  console.log(newSentence.toLowerCase());
+  console.log(string.concat(sentence1, newSentence));
+
+  let int = "5";
+  let padSentence = int.padStart(5, "0");
+  let padEnd = int.padEnd(5, "0");
+  console.log(int);
+  console.log(padSentence);
+  console.log(padEnd);
+
+  const dictionary = "dictionary";
+  console.log(dictionary.indexOf("c"));
+  console.log(dictionary.lastIndexOf("i"));
+  console.log(dictionary.search("t"));
+  console.log(dictionary.match(/i/g));
+
+  console.log(dictionary.includes("i", 4));
+  console.log(dictionary.includes("i", 5));
+
+  console.log(dictionary.startsWith("d"));
+  console.log(dictionary.startsWith("D"));
+
+  console.log(dictionary.endsWith("ary"));
+  console.log(dictionary.endsWith("y"));
+
+  const temLit = 9;
+  console.log(`This is a template literal ${temLit}`);
 }
 
 // Nested Objects
