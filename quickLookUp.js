@@ -359,8 +359,8 @@ function mathLookUP() {
   console.log(Math.sin((30 * Math.PI) / 180));
   console.log(Math.cos((45 * Math.PI) / 180));
   console.log(Math.max.apply(null, numLine));
-  console.log(Math.max(1,2,3,4,5,11231,12,123123));
-  console.log(Math.min(123123, 12312,123123,12,1));
+  console.log(Math.max(1, 2, 3, 4, 5, 11231, 12, 123123));
+  console.log(Math.min(123123, 12312, 123123, 12, 1));
   console.log(Math.random());
   console.log(Math.log(10));
   console.log(Math.log2(4));
@@ -375,11 +375,130 @@ function mathLookUP() {
 
 datesLookUP();
 function datesLookUP() {
-  
+  const d = new Date();
+  console.log(d);
+
+  console.log(new Date(2022, 0, 28, 6, 36, 30, 100));
+  console.log(new Date("October 14, 2021 12:00:00"));
+  console.log(new Date(1000000000000));
+
+  // Last century uses 2 digits
+  console.log(new Date(98, 1));
+
+  const a = new Date();
+  console.log(a);
+  console.log(a.toString());
+  console.log(a.toUTCString());
+  console.log(a.toDateString());
+  console.log(a.toISOString());
+
+  const f = new Date("2020-10-14");
+  console.log(f);
+
+  let msec = Date.parse(f);
+  console.log(msec);
+
+  console.log(f.getFullYear());
+  console.log(f.getMonth());
+  console.log(f.getDate());
+  console.log(f.getHours());
+  console.log(f.getMinutes());
+  console.log(f.getSeconds());
+  console.log(f.getMilliseconds());
+
+  console.log(f.getTime());
+  // Gets weekday
+  console.log(f.getDay());
+
+  console.log(Date.now());
+
+  let g = new Date();
+  g.setFullYear(2010);
+  console.log(g);
+
+  g.setMonth(0);
+  console.log(g);
+
+  g.setDate(14);
+  console.log(g);
+
+  g.setHours(13);
+  console.log(g);
+
+  g.setMinutes(33);
+  console.log(g);
+
+  g.setSeconds(10);
+  console.log(g);
+
+  g.setMilliseconds(140);
+  console.log(g);
+
+  g.setTime(100000000);
+  console.log(g);
 }
 
 arrayIterationsLookUP();
-function arrayIterationsLookUP() {}
+function arrayIterationsLookUP() {
+  // .forEach Method performs method on each value in the array
+  const numLine = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const numLine0 = [];
+
+  numLine.forEach(addFunc);
+
+  function addFunc(value, index, array) {
+    console.log(value);
+    console.log(index);
+    console.log(array);
+    array[index] = array[index] + array[index];
+  }
+
+  console.log(numLine);
+
+  // .map Method creates new array by performing a function on each array element
+  console.log(numLine);
+
+  const numLine1 = numLine.map(expon);
+
+  function expon(value, index, array) {
+    console.log(value);
+    console.log(index);
+    console.log(array);
+    return value ** 2;
+  }
+
+  console.log(numLine);
+  console.log(numLine1);
+
+  // .filter Method creates a new array with the array elements that pass a test
+
+  const numLine2 = numLine1.filter(filterNum);
+
+  function filterNum(value, index, array) {
+    console.log(value);
+    console.log(index);
+    console.log(array);
+    return value >= 100 && value <= 200;
+  }
+
+  console.log(numLine2);
+
+  // .reduce Method runs a function on an array to produce a single value accepts (total, value, index, array) parameters (.reduce can accept an inital value)
+  const num = [[1, 2, 3],[ 4, 5, 6], [7, 8, 9]];
+
+  // Set initial value to zero ( , 0) otherwise first value is used as total
+  let sum = num.reduce(reducer, 0);
+
+  function reducer(total, value, index, array) {
+    console.log(total);
+    console.log(value);
+    console.log(index);
+    console.log(array);
+    console.log(value[0])
+    return total + value[0] + value [1] + value [2]
+  }
+  console.log(sum);
+}
 
 nestedObjectsLookUP();
 function nestedObjectsLookUP() {}
