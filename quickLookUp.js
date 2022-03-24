@@ -5,7 +5,7 @@ console.log(new Date());
 stringsLookUp();
 function stringsLookUp() {
   const string = `string`;
-  const string0 = "string";
+  const string0 = 'string';
   console.log(typeof string);
 
   console.log(string === string0);
@@ -20,8 +20,8 @@ function stringsLookUp() {
   console.log(string.substring(0, 4));
   console.log(string.substring(1, 5));
 
-  const sentence1 = "This is a sentence.";
-  let newSentence = sentence1.replace("sentence", "paragraph");
+  const sentence1 = 'This is a sentence.';
+  let newSentence = sentence1.replace('sentence', 'paragraph');
   console.log(sentence1);
   console.log(newSentence);
 
@@ -29,27 +29,27 @@ function stringsLookUp() {
   console.log(newSentence.toLowerCase());
   console.log(string.concat(sentence1, newSentence));
 
-  let int = "5";
-  let padSentence = int.padStart(5, "0");
-  let padEnd = int.padEnd(5, "0");
+  let int = '5';
+  let padSentence = int.padStart(5, '0');
+  let padEnd = int.padEnd(5, '0');
   console.log(int);
   console.log(padSentence);
   console.log(padEnd);
 
-  const dictionary = "dictionary";
-  console.log(dictionary.indexOf("c"));
-  console.log(dictionary.lastIndexOf("i"));
-  console.log(dictionary.search("t"));
+  const dictionary = 'dictionary';
+  console.log(dictionary.indexOf('c'));
+  console.log(dictionary.lastIndexOf('i'));
+  console.log(dictionary.search('t'));
   console.log(dictionary.match(/i/g));
 
-  console.log(dictionary.includes("i", 4));
-  console.log(dictionary.includes("i", 5));
+  console.log(dictionary.includes('i', 4));
+  console.log(dictionary.includes('i', 5));
 
-  console.log(dictionary.startsWith("d"));
-  console.log(dictionary.startsWith("D"));
+  console.log(dictionary.startsWith('d'));
+  console.log(dictionary.startsWith('D'));
 
-  console.log(dictionary.endsWith("ary"));
-  console.log(dictionary.endsWith("y"));
+  console.log(dictionary.endsWith('ary'));
+  console.log(dictionary.endsWith('y'));
 
   const temLit = 9;
   console.log(`This is a template literal ${temLit}`);
@@ -62,7 +62,7 @@ function numbersLookUp() {
   const num1 = 12345.6789;
   const num2 = Number.MAX_VALUE;
   const num3 = Number.MIN_VALUE;
-  const string = "f";
+  const string = 'f';
 
   console.log(typeof num0);
   console.log(isNaN(string));
@@ -79,7 +79,7 @@ function numbersLookUp() {
   console.log(num1.toPrecision(1));
   console.log(num1.toPrecision(2));
 
-  console.log(Number("6"));
+  console.log(Number('6'));
 
   console.log(parseInt(num1));
   console.log(parseFloat(num1));
@@ -92,8 +92,8 @@ function numbersLookUp() {
 // Arrays
 arraysLookUp();
 function arraysLookUp() {
-  const cars = ["audi", "bmw", "ferrari", "honda", "toyota"];
-  const planets = ["mercury", "venus", "earth"];
+  const cars = ['audi', 'bmw', 'ferrari', 'honda', 'toyota'];
+  const planets = ['mercury', 'venus', 'earth'];
   console.log(cars);
   console.log(cars[0]);
   console.log(cars[cars.length - 1]);
@@ -102,12 +102,12 @@ function arraysLookUp() {
   console.log(Array.isArray(cars));
   console.log(cars.toString());
 
-  cars.push("mercedes");
+  cars.push('mercedes');
   console.log(cars);
   cars.pop();
   console.log(cars);
 
-  cars.unshift("mercedes");
+  cars.unshift('mercedes');
   console.log(cars);
   cars.shift();
   console.log(cars);
@@ -116,13 +116,13 @@ function arraysLookUp() {
   const carplanet = cars.concat(planets);
 
   console.log(carplanet);
-  carplanet.splice(1, 2, "replace");
+  carplanet.splice(1, 2, 'replace');
   console.log(carplanet);
 
   console.log(carplanet);
   console.log(carplanet.slice(1, 4));
 
-  console.log(carplanet.includes("earth"));
+  console.log(carplanet.includes('earth'));
 
   carplanet.sort();
   console.log(carplanet);
@@ -183,46 +183,46 @@ function conditionalsLookUp() {
   const d = new Date().getDay();
 
   if (result === 100) {
-    console.log("perfect");
+    console.log('perfect');
   } else if (result >= 90) {
     console.log(90);
   } else {
-    console.log("Failed");
+    console.log('Failed');
   }
 
   switch (result) {
     default:
-      console.log("You failed");
+      console.log('You failed');
       break;
     case 100:
-      console.log("perfect");
+      console.log('perfect');
       break;
     case 90:
-      console.log("A");
+      console.log('A');
       break;
   }
 
   switch (d) {
     case 0:
-      console.log("Sunday");
+      console.log('Sunday');
       break;
     case 1:
-      console.log("Monday");
+      console.log('Monday');
       break;
     case 2:
-      console.log("Tuesday");
+      console.log('Tuesday');
       break;
     case 3:
-      console.log("Wednesday");
+      console.log('Wednesday');
       break;
     case 4:
-      console.log("Thursday");
+      console.log('Thursday');
       break;
     case 5:
-      console.log("Friday");
+      console.log('Friday');
       break;
     case 6:
-      console.log("Saturday");
+      console.log('Saturday');
       break;
   }
 }
@@ -230,8 +230,8 @@ function conditionalsLookUp() {
 // Loops
 loopsLookUp();
 function loopsLookUp() {
-  const samObj = { fname: "franklin", lname: "miranda" };
-  const samArr = ["bmw", "audi", "honda"];
+  const samObj = { fname: 'franklin', lname: 'miranda' };
+  const samArr = ['bmw', 'audi', 'honda'];
 
   for (let i = 0; i < 6; i++) {
     console.log(i);
@@ -276,7 +276,7 @@ function loopsLookUp() {
   }
 }
 
-// Functions 
+// Functions
 // TODO add recusion and Asynchronous examples
 functionsLookUP();
 function functionsLookUP() {
@@ -294,7 +294,7 @@ function functionsLookUP() {
 
   // Functions passes as argument to other Functions
   function greeting() {
-    return "Hello";
+    return 'Hello';
   }
   function phrase(message) {
     return message();
@@ -302,7 +302,7 @@ function functionsLookUP() {
   console.log(phrase(greeting));
 
   function greeting1() {
-    return "Hello";
+    return 'Hello';
   }
   function phrase1(message) {
     return message;
@@ -310,10 +310,10 @@ function functionsLookUP() {
   console.log(phrase1(greeting1()));
 
   function greeting2() {
-    return "Hello";
+    return 'Hello';
   }
   function greeting3() {
-    return "Bye";
+    return 'Bye';
   }
   function phrase2(message1, message2) {
     console.log(message1());
@@ -323,14 +323,14 @@ function functionsLookUP() {
 
   // Functions can return Function using a variable
   const functionVar = () => {
-    return () => "Hello";
+    return () => 'Hello';
   };
   returnedFunction = functionVar();
   console.log(returnedFunction());
 
   // Functions can return a Function using double parentheses
   const functionPar = () => {
-    return () => "Hello";
+    return () => 'Hello';
   };
   console.log(functionVar()());
 }
@@ -384,7 +384,7 @@ function datesLookUP() {
   console.log(d);
 
   console.log(new Date(2022, 0, 28, 6, 36, 30, 100));
-  console.log(new Date("October 14, 2021 12:00:00"));
+  console.log(new Date('October 14, 2021 12:00:00'));
   console.log(new Date(1000000000000));
 
   // Last century uses 2 digits
@@ -397,7 +397,7 @@ function datesLookUP() {
   console.log(a.toDateString());
   console.log(a.toISOString());
 
-  const f = new Date("2020-10-14");
+  const f = new Date('2020-10-14');
   console.log(f);
 
   let msec = Date.parse(f);
@@ -574,12 +574,12 @@ function arrayIterationsLookUP() {
   console.log(finderIndex);
 
   // .from returns an array object from any object with a length property
-  const lengthP = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lengthP = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const len = Array.from(lengthP);
   console.log(len);
 
   // .keys returns an Iterator Object with the keys of an array
-  const cars5 = ["honda", "toyota", "subaru", "kia"];
+  const cars5 = ['honda', 'toyota', 'subaru', 'kia'];
   const keys = cars5.keys();
 
   for (let x of keys) {
@@ -591,7 +591,7 @@ function arrayIterationsLookUP() {
 objectsLookUp();
 function objectsLookUp() {
   const string = `string`;
-  const string0 = "string";
+  const string0 = 'string';
   console.log(typeof string);
 
   console.log(string === string0);
@@ -606,8 +606,8 @@ function objectsLookUp() {
   console.log(string.substring(0, 4));
   console.log(string.substring(1, 5));
 
-  const sentence1 = "This is a sentence.";
-  let newSentence = sentence1.replace("sentence", "paragraph");
+  const sentence1 = 'This is a sentence.';
+  let newSentence = sentence1.replace('sentence', 'paragraph');
   console.log(sentence1);
   console.log(newSentence);
 
@@ -615,27 +615,27 @@ function objectsLookUp() {
   console.log(newSentence.toLowerCase());
   console.log(string.concat(sentence1, newSentence));
 
-  let int = "5";
-  let padSentence = int.padStart(5, "0");
-  let padEnd = int.padEnd(5, "0");
+  let int = '5';
+  let padSentence = int.padStart(5, '0');
+  let padEnd = int.padEnd(5, '0');
   console.log(int);
   console.log(padSentence);
   console.log(padEnd);
 
-  const dictionary = "dictionary";
-  console.log(dictionary.indexOf("c"));
-  console.log(dictionary.lastIndexOf("i"));
-  console.log(dictionary.search("t"));
+  const dictionary = 'dictionary';
+  console.log(dictionary.indexOf('c'));
+  console.log(dictionary.lastIndexOf('i'));
+  console.log(dictionary.search('t'));
   console.log(dictionary.match(/i/g));
 
-  console.log(dictionary.includes("i", 4));
-  console.log(dictionary.includes("i", 5));
+  console.log(dictionary.includes('i', 4));
+  console.log(dictionary.includes('i', 5));
 
-  console.log(dictionary.startsWith("d"));
-  console.log(dictionary.startsWith("D"));
+  console.log(dictionary.startsWith('d'));
+  console.log(dictionary.startsWith('D'));
 
-  console.log(dictionary.endsWith("ary"));
-  console.log(dictionary.endsWith("y"));
+  console.log(dictionary.endsWith('ary'));
+  console.log(dictionary.endsWith('y'));
 
   const temLit = 9;
   console.log(`This is a template literal ${temLit}`);
@@ -667,4 +667,14 @@ function nestedObjectsLookUP() {
     return newArr;
   }
   console.log(dupNum(nestedArr));
+}
+
+// Nested Objects
+jsHTMLLookUP();
+function jsHTMLLookUP() {
+  document.getElementById('Id').innerHTML = 'Replacement Text';
+  document.getElementById('Id').style.size = '3px';
+  document.getElementById('Id').style.display = 'none';
+  document.getElementById('Id').style.display = 'block';
+
 }
