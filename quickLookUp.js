@@ -227,6 +227,7 @@ function conditionalsLookUp() {
   }
 }
 
+// Loops
 loopsLookUp();
 function loopsLookUp() {
   const samObj = { fname: "franklin", lname: "miranda" };
@@ -275,6 +276,7 @@ function loopsLookUp() {
   }
 }
 
+// Functions
 functionsLookUP();
 function functionsLookUP() {
   // Arrow case means function is not hoisted
@@ -332,6 +334,7 @@ function functionsLookUP() {
   console.log(functionVar()());
 }
 
+// Math
 mathLookUP();
 function mathLookUP() {
   // Math constants that can be accessed as Math.properties
@@ -373,6 +376,7 @@ function mathLookUP() {
   console.log(rndInt(10, 120));
 }
 
+// Dates
 datesLookUP();
 function datesLookUP() {
   const d = new Date();
@@ -438,6 +442,7 @@ function datesLookUP() {
   console.log(g);
 }
 
+// Array Iterations
 arrayIterationsLookUP();
 function arrayIterationsLookUP() {
   // .forEach Method performs method on each value in the array
@@ -484,7 +489,11 @@ function arrayIterationsLookUP() {
   console.log(numLine2);
 
   // .reduce Method runs a function on an array to produce a single value accepts (total, value, index, array) parameters (.reduce can accept an inital value)
-  const num = [[1, 2, 3],[ 4, 5, 6], [7, 8, 9]];
+  const num = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ];
 
   // Set initial value to zero ( , 0) otherwise first value is used as total
   let sum = num.reduce(reducer, 0);
@@ -494,11 +503,113 @@ function arrayIterationsLookUP() {
     console.log(value);
     console.log(index);
     console.log(array);
-    console.log(value[0])
-    return total + value[0] + value [1] + value [2]
+    console.log(value[0]);
+    return total + value[0] + value[1] + value[2];
   }
   console.log(sum);
+
+  // .reduceRight HERE
+  const num1 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ];
+
+  let sum1 = num1.reduceRight(reducer1, 0);
+
+  function reducer1(total, value, index, array) {
+    console.log(total);
+    console.log(value);
+    console.log(index);
+    console.log(array);
+    console.log(value[0]);
+    return total + value[0] + value[1] + value[2];
+  }
+  console.log(sum1);
+
+  // .every Method checks if all array elements pass the test, returns true false
+  const testArr = [150, 160, 40, 212];
+
+  const test = testArr.every(testFunc);
+
+  function testFunc(value, index, array) {
+    return value > 100;
+  }
+
+  console.log(test);
+
+  // array.some Method checks if some of array elements pass the test, returns a true false
+  const testArr1 = [150, 160, 40, 212, 160, 40];
+
+  const test1 = testArr1.some(testFunc1);
+
+  function testFunc1(value, index, array) {
+    return value > 1000;
+  }
+  console.log(test1);
+
+  // .indexOf
+  console.log(testArr1.indexOf(160));
+  console.log(testArr1.indexOf(40));
+
+  // .lastIndexOf
+  console.log(testArr1.lastIndexOf(160));
+  console.log(testArr1.lastIndexOf(40));
+
+  // .find Method searches for the first value that passes the specified test
+  const finderValue = testArr1.find(finderFunc);
+
+  function finderFunc(value, index, array) {
+    return value <= 40;
+  }
+  console.log(finderValue);
+
+  // .findIndex Method finds the index of the first element to pass the test function
+  const finderIndex = testArr1.findIndex(criteria);
+
+  function criteria(value, index, array) {
+    return value < 50;
+  }
+  console.log(finderIndex);
+
+  // .from returns an array object from any object with a length property
+  const lengthP = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const len = Array.from(lengthP);
+  console.log(len);
+
+  // .keys returns an Iterator Object with the keys of an array
+  const cars5 = ["honda", "toyota", "subaru", "kia"];
+  const keys = cars5.keys();
+
+  for (let x of keys) {
+    console.log(x);
+  }
 }
 
+// Nested Objects
 nestedObjectsLookUP();
-function nestedObjectsLookUP() {}
+function nestedObjectsLookUP() {
+  // Iterating Over Nested Arrays
+  const nestedArr = [
+    [1, 2, 3, 4, 5],
+    [15, 17, 19, 21, 23, 1, 2, 3, 4, 5],
+    [5, 8, 9, 8, 5, 17, 1],
+  ];
+
+  // .pop() arrays off and iterate
+  function dupNum(array) {
+    let arr0 = array.pop();
+    let newArr = [];
+
+    while (array.length) {
+      let arr1 = array.pop();
+
+      arr0.forEach((value, index, array) => {
+        if (arr1.includes(value) && !newArr.includes(value)) newArr.push(value);
+      });
+      arr0 = newArr;
+    }
+    return newArr;
+  }
+  console.log(dupNum(nestedArr));
+}
