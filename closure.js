@@ -78,11 +78,11 @@ anotherNumber3 = anotherFunction3();
 
 function scoreFactory () {
   let score = 0;
-  function scoreInstance () {
+  function scoreTemplate () {
     score++;
     return score;
   }
-  return scoreInstance;
+  return scoreTemplate;
 }
 console.log(scoreFactory)
 console.log(scoreFactory())
@@ -90,33 +90,48 @@ console.log(scoreFactory())
 const newLabelSF = scoreFactory;
 console.log(newLabelSF)
 
-const scoreInstance1 = scoreFactory();
-console.log(scoreInstance1)
+const scoreTemplate1 = scoreFactory();
+console.log(scoreTemplate1)
 
-let scoreLine1 = scoreInstance1();
+let scoreLine1 = scoreTemplate1();
 console.log(scoreLine1)
 console.log(scoreLine1)
 
-scoreLine1 = scoreInstance1();
+scoreLine1 = scoreTemplate1();
 console.log(scoreLine1)
 
-scoreLine1 = scoreInstance1();
+scoreLine1 = scoreTemplate1();
 console.log(scoreLine1)
 
 // Still accessing scoreLine1's closure
-let scoreLine2 = scoreInstance1();
+let scoreLine2 = scoreTemplate1();
 console.log(scoreLine2)
 
 // 2 permenant memory or associated cache Closures' 
-const scoreInstance3 = scoreFactory();
-console.log(scoreInstance3)
-let scoreLine3 = scoreInstance3();
+const scoreTemplate3 = scoreFactory();
+console.log(scoreTemplate3)
+let scoreLine3 = scoreTemplate3();
 console.log(scoreLine3)
 
-scoreLine3 = scoreInstance3()
+scoreLine3 = scoreTemplate3()
 console.log(scoreLine3)
 
-scoreLine1 = scoreInstance1()
+scoreLine1 = scoreTemplate1()
 console.log(scoreLine1)
-scoreLine3 = scoreInstance3()
+scoreLine3 = scoreTemplate3()
 console.log(scoreLine3)
+
+// Initializing third Factory Line
+const scoreTemplate4 = scoreFactory()
+console.log(scoreTemplate4)
+let scoreLine4 = scoreTemplate4() 
+console.log(scoreLine4)
+
+scoreLine4 = scoreTemplate4()
+console.log(scoreLine4)
+
+// Score Line 1 and Score Line 2 are accessing the same backpack or Closure
+console.log(scoreLine1)
+console.log(scoreLine2)
+console.log(scoreLine3)
+console.log(scoreLine4)
