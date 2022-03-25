@@ -53,7 +53,6 @@ console.log(myNewNumber);
 myNewNumber = myNewFunction();
 console.log(myNewNumber);
 
-
 // Closure Backpack example multiple backpacks function factory TODO ScoreIncrementor
 function outer3() {
   let counter3 = 0;
@@ -74,64 +73,68 @@ let anotherNumber3 = anotherFunction3();
 myNewNumber3 = myNewFunction();
 anotherNumber3 = anotherFunction3();
 
-// Score Factory 
+// Score Factory
 
-function scoreFactory () {
+function scoreFactory() {
   let score = 0;
-  function scoreTemplate () {
+  function scoreTemplate() {
+    if (score === 3) {
+      return 'you already ran me 3 times';
+    }
     score++;
     return score;
   }
   return scoreTemplate;
 }
-console.log(scoreFactory)
-console.log(scoreFactory())
+console.log(scoreFactory);
+console.log(scoreFactory());
 
-const newLabelSF = scoreFactory;
-console.log(newLabelSF)
+const scoreFactoryDef = scoreFactory;
+console.log(scoreFactoryDef);
 
+// Closure 1 initialized
 const scoreTemplate1 = scoreFactory();
-console.log(scoreTemplate1)
+console.log(scoreTemplate1);
 
 let scoreLine1 = scoreTemplate1();
-console.log(scoreLine1)
-console.log(scoreLine1)
+console.log(scoreLine1);
+console.log(scoreLine1);
 
 scoreLine1 = scoreTemplate1();
-console.log(scoreLine1)
+console.log(scoreLine1);
 
 scoreLine1 = scoreTemplate1();
-console.log(scoreLine1)
+console.log(scoreLine1);
 
 // Still accessing scoreLine1's closure
 let scoreLine2 = scoreTemplate1();
-console.log(scoreLine2)
+console.log(scoreLine2);
 
-// 2 permenant memory or associated cache Closures' 
+// Closure 2 initialized
 const scoreTemplate3 = scoreFactory();
-console.log(scoreTemplate3)
+console.log(scoreTemplate3);
 let scoreLine3 = scoreTemplate3();
-console.log(scoreLine3)
+console.log(scoreLine3);
 
-scoreLine3 = scoreTemplate3()
-console.log(scoreLine3)
+scoreLine3 = scoreTemplate3();
+console.log(scoreLine3);
 
-scoreLine1 = scoreTemplate1()
-console.log(scoreLine1)
-scoreLine3 = scoreTemplate3()
-console.log(scoreLine3)
+scoreLine1 = scoreTemplate1();
+console.log(scoreLine1);
+scoreLine3 = scoreTemplate3();
+console.log(scoreLine3);
 
-// Initializing third Factory Line
-const scoreTemplate4 = scoreFactory()
-console.log(scoreTemplate4)
-let scoreLine4 = scoreTemplate4() 
-console.log(scoreLine4)
+// Closure 3 initialized
+const scoreTemplate4 = scoreFactory();
+console.log(scoreTemplate4);
+let scoreLine4 = scoreTemplate4();
+console.log(scoreLine4);
 
-scoreLine4 = scoreTemplate4()
-console.log(scoreLine4)
+scoreLine4 = scoreTemplate4();
+console.log(scoreLine4);
 
 // Score Line 1 and Score Line 2 are accessing the same backpack or Closure
-console.log(scoreLine1)
-console.log(scoreLine2)
-console.log(scoreLine3)
-console.log(scoreLine4)
+console.log(scoreLine1);
+console.log(scoreLine2);
+console.log(scoreLine3);
+console.log(scoreLine4);
