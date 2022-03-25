@@ -73,3 +73,48 @@ let anotherNumber3 = anotherFunction3();
 
 myNewNumber3 = myNewFunction();
 anotherNumber3 = anotherFunction3();
+
+// Score Factory 
+
+function scoreFactory () {
+  let score = 0;
+  function scoreInstance () {
+    score++;
+    return score;
+  }
+  return scoreInstance;
+}
+
+const newLabelSF = scoreFactory;
+console.log(newLabelSF)
+
+const scoreInstance1 = scoreFactory();
+console.log(scoreInstance1)
+
+let scoreLine1 = scoreInstance1();
+console.log(scoreLine1)
+console.log(scoreLine1)
+
+scoreLine1 = scoreInstance1();
+console.log(scoreLine1)
+
+scoreLine1 = scoreInstance1();
+console.log(scoreLine1)
+
+// Still accessing scoreLine1's closure
+let scoreLine2 = scoreInstance1();
+console.log(scoreLine2)
+
+// 2 permenant memory or associated cache Closures' 
+const scoreInstance3 = scoreFactory();
+console.log(scoreInstance3)
+let scoreLine3 = scoreInstance3();
+console.log(scoreLine3)
+
+scoreLine3 = scoreInstance3()
+console.log(scoreLine3)
+
+scoreLine1 = scoreInstance1()
+console.log(scoreLine1)
+scoreLine3 = scoreInstance3()
+console.log(scoreLine3)
