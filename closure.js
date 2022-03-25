@@ -84,6 +84,8 @@ function scoreFactory () {
   }
   return scoreInstance;
 }
+console.log(scoreFactory)
+console.log(scoreFactory())
 
 const newLabelSF = scoreFactory;
 console.log(newLabelSF)
