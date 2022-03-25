@@ -673,3 +673,12 @@ function nestedObjectsLookUP() {
   }
   console.log(dupNum(nestedArr));
 }
+
+// Nested Objects
+jsHTMLLookUP();
+function jsHTMLLookUP() {
+  document.getElementById('Id').innerHTML = 'Replacement Text';
+  document.getElementById('Id').style.size = '3px';
+  document.getElementById('Id').style.display = 'none';
+  document.getElementById('Id').style.display = 'block';
+}
