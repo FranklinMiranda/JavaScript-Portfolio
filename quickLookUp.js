@@ -52,7 +52,7 @@ console.log(new Date());
 
   const temLit = 9;
   console.log(`This is a template literal ${temLit}`);
-}) ();
+})();
 
 // Numbers
 (function numbersLookUp() {
@@ -85,7 +85,7 @@ console.log(new Date());
 
   console.log(num2);
   console.log(num3);
-}) ();
+})();
 
 // Arrays
 (function arraysLookUp() {
@@ -171,7 +171,7 @@ console.log(new Date());
   ];
   console.log(nestArr[2][0][2]);
   console.log(nestArr[1][2][2]);
-}) ();
+})();
 
 // Conditionals
 (function conditionalsLookUp() {
@@ -221,7 +221,7 @@ console.log(new Date());
       console.log('Saturday');
       break;
   }
-}) ();
+})();
 
 // Loops
 (function loopsLookUp() {
@@ -269,7 +269,7 @@ console.log(new Date());
     }
     console.log(i);
   }
-}) ();
+})();
 
 // Functions
 // TODO add recursion and Asynchronous examples and closure
@@ -332,7 +332,13 @@ console.log(new Date());
   (function () {
     console.log('Self invoking function printed this');
   })();
-}) ();
+})();
+
+// Closure
+(function closureLookUP() {})();
+
+// Callbacks and Higher Order Functions
+(function callbacksHigherOrderLookUP() {})();
 
 // Math
 (function mathLookUP() {
@@ -373,7 +379,7 @@ console.log(new Date());
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   console.log(rndInt(10, 120));
-}) ();
+})();
 
 // Dates
 (function datesLookUP() {
@@ -438,7 +444,7 @@ console.log(new Date());
 
   g.setTime(100000000);
   console.log(g);
-}) ();
+})();
 
 // Array Iterations
 (function arrayIterationsLookUP() {
@@ -581,7 +587,7 @@ console.log(new Date());
   for (let x of keys) {
     console.log(x);
   }
-}) ();
+})();
 
 // Objects
 (function objectsLookUp() {
@@ -634,7 +640,7 @@ console.log(new Date());
 
   const temLit = 9;
   console.log(`This is a template literal ${temLit}`);
-}) ();
+})();
 
 // Nested Objects
 (function nestedObjectsLookUP() {
@@ -661,7 +667,7 @@ console.log(new Date());
     return newArr;
   }
   console.log(dupNum(nestedArr));
-}) ();
+})();
 
 // Nested Objects
 (function jsHTMLLookUP() {
@@ -669,4 +675,4 @@ console.log(new Date());
   // document.getElementById('Id').style.size = '3px';
   // document.getElementById('Id').style.display = 'none';
   // document.getElementById('Id').style.display = 'block';
-}) ();
+})();
