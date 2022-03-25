@@ -1,4 +1,4 @@
-// JavaScript Quicklookup
+// Quicklookup
 console.log(new Date());
 
 // Strings

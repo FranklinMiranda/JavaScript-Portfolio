@@ -1,4 +1,4 @@
-// Nested Objects
+// Nested Object
 console.log(new Date())
 
 const locations = {

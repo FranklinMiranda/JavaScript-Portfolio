@@ -1,4 +1,4 @@
-// Scratch Pad
+// Scratch
 console.log(new Date())
 
 function eitherCallback(callback1, callback2) {
