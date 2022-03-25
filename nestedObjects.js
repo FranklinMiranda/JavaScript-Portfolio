@@ -1,3 +1,6 @@
+// Nested Objects
+console.log(new Date())
+
 const locations = {
   sun: {
     info: "The Sun is the star at the center of the Solar System.",

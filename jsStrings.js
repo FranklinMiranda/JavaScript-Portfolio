@@ -1,3 +1,6 @@
+// Strings
+console.log(new Date())
+
 // JavaScript strings are used for storing and manipulating data
 // Strings can have zero or more characters inside quotes
 // Strings are primitive values created from literals, but can be defined as objects with the new keyword

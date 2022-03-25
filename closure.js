@@ -1,3 +1,6 @@
+// Closure
+console.log(new Date())
+
 function add(numAdd) {
   return numAdd + 1;
 }

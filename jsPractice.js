@@ -1,3 +1,6 @@
+// Practice
+console.log(new Date())
+
 // JavaScript Refresher Practice
 // Using var, let, and const declare 3 number variables num1, num2, and num3 and assign num1 = 10, num2 = 5, and num3 = 1
 var num1 = 10;

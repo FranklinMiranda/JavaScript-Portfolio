@@ -1,4 +1,6 @@
-// JavaScript Math
+// Math
+console.log(new Date())
+
 // Math object has no constructor and can be used before being created
 // Math properties are accessed using Math.property
 // JavaScript provides 8 constants than can be accessed as properties

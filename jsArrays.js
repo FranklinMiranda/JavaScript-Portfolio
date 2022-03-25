@@ -1,3 +1,6 @@
+// Arrays
+console.log(new Date())
+
 // JavaScript Arrays Refresher Practice
 // An array is a composite data type in JavaScript composed of a list of elements with a numbered index
 // Arrays are directly iterable and can contain other primitive data or other arrays and objects as well as functions

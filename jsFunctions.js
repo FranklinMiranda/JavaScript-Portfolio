@@ -1,3 +1,6 @@
+// Functions
+console.log(new Date())
+
 // JavaScript Functions
 // In JS functions are first class functions (They are treated as any other variable)
 

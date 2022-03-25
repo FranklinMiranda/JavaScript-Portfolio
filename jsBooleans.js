@@ -1,1 +1,2 @@
-// JavaScript Booleans 
+// Booleans 
+console.log(new Date())

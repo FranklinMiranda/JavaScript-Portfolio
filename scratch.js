@@ -1,3 +1,6 @@
+// Scratch Pad
+console.log(new Date())
+
 function eitherCallback(callback1, callback2) {
   // ADD CODE HERE
   console.log(callback1);

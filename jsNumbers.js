@@ -1,3 +1,6 @@
+// Numbers
+console.log(new Date())
+
 // JavaScript Numbers are always 64-bit Floating Point numbers
 // Floating point arithmetic is not always accurate, may have to multiply then divide by 10
 

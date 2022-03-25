@@ -1,4 +1,6 @@
-// JavaScript Loops
+// Loops
+console.log(new Date())
+
 // For Loop (Loops through code block depending on the initializer, conditional, and iterator statements)
 for (let i = 0; i < 10; i++) {
   console.log(i);

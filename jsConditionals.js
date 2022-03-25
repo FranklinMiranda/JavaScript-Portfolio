@@ -1,4 +1,6 @@
-// JavaScript Conditional Statements
+// Conditional Statements
+console.log(new Date())
+
 // If Else if Else Statements
 const x = 2;
 

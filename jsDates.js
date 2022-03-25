@@ -1,3 +1,6 @@
+// Dates
+console.log(new Date())
+
 // JavaScript Date Objects
 const d = new Date();
 console.log(d);
