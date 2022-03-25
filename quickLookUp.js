@@ -2,8 +2,7 @@
 console.log(new Date());
 
 // Strings
-stringsLookUp();
-function stringsLookUp() {
+(function stringsLookUp() {
   const string = `string`;
   const string0 = 'string';
   console.log(typeof string);
@@ -53,11 +52,10 @@ function stringsLookUp() {
 
   const temLit = 9;
   console.log(`This is a template literal ${temLit}`);
-}
+}) ();
 
 // Numbers
-numbersLookUp();
-function numbersLookUp() {
+(function numbersLookUp() {
   const num0 = 5;
   const num1 = 12345.6789;
   const num2 = Number.MAX_VALUE;
@@ -87,11 +85,10 @@ function numbersLookUp() {
 
   console.log(num2);
   console.log(num3);
-}
+}) ();
 
 // Arrays
-arraysLookUp();
-function arraysLookUp() {
+(function arraysLookUp() {
   const cars = ['audi', 'bmw', 'ferrari', 'honda', 'toyota'];
   const planets = ['mercury', 'venus', 'earth'];
   console.log(cars);
@@ -174,11 +171,10 @@ function arraysLookUp() {
   ];
   console.log(nestArr[2][0][2]);
   console.log(nestArr[1][2][2]);
-}
+}) ();
 
 // Conditionals
-conditionalsLookUp();
-function conditionalsLookUp() {
+(function conditionalsLookUp() {
   const result = 90;
   const d = new Date().getDay();
 
@@ -225,11 +221,10 @@ function conditionalsLookUp() {
       console.log('Saturday');
       break;
   }
-}
+}) ();
 
 // Loops
-loopsLookUp();
-function loopsLookUp() {
+(function loopsLookUp() {
   const samObj = { fname: 'franklin', lname: 'miranda' };
   const samArr = ['bmw', 'audi', 'honda'];
 
@@ -274,12 +269,11 @@ function loopsLookUp() {
     }
     console.log(i);
   }
-}
+}) ();
 
 // Functions
-// TODO add recusion and Asynchronous examples
-functionsLookUP();
-function functionsLookUP() {
+// TODO add recursion and Asynchronous examples and closure
+(function functionsLookUP() {
   // Arrow case means function is not hoisted
   const addFunction = (a, b) => {
     return console.log(a + b);
@@ -338,11 +332,10 @@ function functionsLookUP() {
   (function () {
     console.log('Self invoking function printed this');
   })();
-}
+}) ();
 
 // Math
-mathLookUP();
-function mathLookUP() {
+(function mathLookUP() {
   // Math constants that can be accessed as Math.properties
   console.log(Math.E);
   console.log(Math.PI);
@@ -380,11 +373,10 @@ function mathLookUP() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   console.log(rndInt(10, 120));
-}
+}) ();
 
 // Dates
-datesLookUP();
-function datesLookUP() {
+(function datesLookUP() {
   const d = new Date();
   console.log(d);
 
@@ -446,11 +438,10 @@ function datesLookUP() {
 
   g.setTime(100000000);
   console.log(g);
-}
+}) ();
 
 // Array Iterations
-arrayIterationsLookUP();
-function arrayIterationsLookUP() {
+(function arrayIterationsLookUP() {
   // .forEach Method performs method on each value in the array
   const numLine = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const numLine0 = [];
@@ -590,11 +581,10 @@ function arrayIterationsLookUP() {
   for (let x of keys) {
     console.log(x);
   }
-}
+}) ();
 
 // Objects
-objectsLookUp();
-function objectsLookUp() {
+(function objectsLookUp() {
   const string = `string`;
   const string0 = 'string';
   console.log(typeof string);
@@ -644,11 +634,10 @@ function objectsLookUp() {
 
   const temLit = 9;
   console.log(`This is a template literal ${temLit}`);
-}
+}) ();
 
 // Nested Objects
-nestedObjectsLookUP();
-function nestedObjectsLookUP() {
+(function nestedObjectsLookUP() {
   // Iterating Over Nested Arrays
   const nestedArr = [
     [1, 2, 3, 4, 5],
@@ -672,13 +661,12 @@ function nestedObjectsLookUP() {
     return newArr;
   }
   console.log(dupNum(nestedArr));
-}
+}) ();
 
 // Nested Objects
-jsHTMLLookUP();
-function jsHTMLLookUP() {
-  document.getElementById('Id').innerHTML = 'Replacement Text';
-  document.getElementById('Id').style.size = '3px';
-  document.getElementById('Id').style.display = 'none';
-  document.getElementById('Id').style.display = 'block';
-}
+(function jsHTMLLookUP() {
+  // document.getElementById('Id').innerHTML = 'Replacement Text';
+  // document.getElementById('Id').style.size = '3px';
+  // document.getElementById('Id').style.display = 'none';
+  // document.getElementById('Id').style.display = 'block';
+}) ();
