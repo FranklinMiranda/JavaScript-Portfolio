@@ -46,12 +46,31 @@ const routes = [
   ['SAN', 'EYW'],
 ];
 
-const fullTransfers = routes;
-console.log(fullTransfers)
+// Find minimum number of airports needed to connect to LGA to have full coverage of all airports
+const airportsToConnectToLGA = [];
 
+const startPoints = [];
 
-function nextStop(route, index, routes) {
-    
+function startingPoint(route) {
+  if (!startPoints.includes(route[0])) {
+    startPoints.push(route[0]);
+  }
 }
+routes.map(startingPoint);
+console.log(startPoints);
 
-fullTransfers.forEach(nextStop)
+function allConnections(startPoint, index, startPoints) {
+  const connectionsArray = [];
+  connectionsArray.push(startPoint);
+  console.log(connectionsArray);
+
+  for (let route of routes) {
+    console.log(route[0])
+    if (route[0] === connectionsArray[0] && !connectionsArray.includes(route[1])) {
+
+      connectionsArray.push(route[1]);
+    }
+  }
+  console.log(connectionsArray);
+}
+startPoints.forEach(allConnections);
