@@ -70,6 +70,7 @@ function minimumAirports(startingAirport, airports, routes) {
   }
   flightConnect.forEach(optimize0);
 
+
   function optimize1(route, index) {
     if (!route.includes(endArray[index]) === true) {
       route.push(endArray[index]);
@@ -77,6 +78,7 @@ function minimumAirports(startingAirport, airports, routes) {
   }
   flightConnect.forEach(optimize1);
 
+  // Problem
   function optimize2(start, index) {
     function optimize3(route) {
       for (let i = 0; i < route.length; i++) {
@@ -89,10 +91,14 @@ function minimumAirports(startingAirport, airports, routes) {
   }
   startArray.forEach(optimize2);
 
+  
+
   function optimize4(route) {
     route.shift();
   }
   flightConnect.forEach(optimize4);
+
+  console.log(flightConnect);
 
   function optimize5(start) {
     const allConnections = [start];
@@ -119,6 +125,6 @@ function minimumAirports(startingAirport, airports, routes) {
     return b.length - a.length;
   });
 
-  console.log(allConnectionsArray);
+  
 }
 minimumAirports(startingAirport, airports, routes);
