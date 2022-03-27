@@ -46,31 +46,58 @@ const routes = [
   ['SAN', 'EYW'],
 ];
 
-// Find minimum number of airports needed to connect to LGA to have full coverage of all airports
-const airportsToConnectToLGA = [];
+const fullChain = routes;
+const startArray = [];
+const endArray = [];
 
-const startPoints = [];
-
-function startingPoint(route) {
-  if (!startPoints.includes(route[0])) {
-    startPoints.push(route[0]);
-  }
+for (let i = 0; i < fullChain.length; i++) {
+  console.log(fullChain[i][0]);
+  startArray.push(fullChain[i][0]);
+  console.log(fullChain[i][1]);
+  endArray.push(fullChain[i][1]);
 }
-routes.map(startingPoint);
-console.log(startPoints);
 
-function allConnections(startPoint, index, startPoints) {
-  const connectionsArray = [];
-  connectionsArray.push(startPoint);
-  console.log(connectionsArray);
+console.log(startArray);
+console.log(endArray);
 
-  for (let route of routes) {
-    console.log(route[0])
-    if (route[0] === connectionsArray[0] && !connectionsArray.includes(route[1])) {
+function nextLeg(route, index, routes) {
+  console.log(endArray);
+  console.log(route[0]);
 
-      connectionsArray.push(route[1]);
+  for (let i = 0; i < endArray.length; i++) {
+    if (route.includes(startArray[i]) === true && !route.includes(endArray[i]) === true) {
+      route.push(endArray[i]);
     }
   }
-  console.log(connectionsArray);
 }
-startPoints.forEach(allConnections);
+fullChain.forEach(nextLeg);
+
+console.log(fullChain);
+
+function consolidate(route, index, routes) {
+  console.log(route);
+
+  for (let i = 0; i < fullChain.length; i++) {
+    if (route[0] === fullChain[i][0]) {
+      for (let j = 0; j < route.length; j++) {
+        if (!fullChain[i].includes(route[j])) {
+          fullChain[i].push(route[j]);
+        }
+      }
+    }
+  }
+}
+fullChain.forEach(consolidate);
+
+console.log(fullChain);
+
+const startArrayNoDups = [];
+const startPointArrayNoDups = [];
+function noDups(oneChain, index, fullChain) {
+  if (!startArrayNoDups.includes(oneChain) === true && !startPointArrayNoDups.includes(oneChain[0]) === true)
+    startArrayNoDups.push(oneChain);
+  startPointArrayNoDups.push(oneChain[0]);
+}
+fullChain.forEach(noDups);
+
+console.log(startArrayNoDups);
