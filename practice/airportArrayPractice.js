@@ -55,7 +55,7 @@ function minimumAirports(startingAirport, airports, routes) {
   const endArray = [];
   const startArrayNoDups = [];
   const allConnectionsArray = [];
-  const flightChainsForAirportsToLGA = [];
+  const testArray = [startingAirport];
 
   function optimize0(route, index) {
     startArray.push(route[0]);
@@ -89,8 +89,6 @@ function minimumAirports(startingAirport, airports, routes) {
   }
   startArray.forEach(optimize2);
 
- 
-
   function optimize4(route) {
     route.shift();
   }
@@ -110,7 +108,7 @@ function minimumAirports(startingAirport, airports, routes) {
     flightConnect.forEach(optimize6);
     allConnectionsArray.push(allConnections);
   }
-  startArray.forEach(optimize5);
+  startArrayNoDups.forEach(optimize5);
 
   function optimize8(route) {
     route.unshift(startingAirport);
@@ -122,9 +120,5 @@ function minimumAirports(startingAirport, airports, routes) {
   });
 
   console.log(allConnectionsArray);
-
-
-  function optimize9(value, index, array) {}
-  allConnectionsArray.forEach(optimize9);
 }
 minimumAirports(startingAirport, airports, routes);
