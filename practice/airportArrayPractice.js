@@ -70,7 +70,6 @@ function minimumAirports(startingAirport, airports, routes) {
   }
   flightConnect.forEach(optimize0);
 
-
   function optimize1(route, index) {
     if (!route.includes(endArray[index]) === true) {
       route.push(endArray[index]);
@@ -78,20 +77,24 @@ function minimumAirports(startingAirport, airports, routes) {
   }
   flightConnect.forEach(optimize1);
 
-  // Problem
-  function optimize2(start, index) {
-    function optimize3(route) {
-      for (let i = 0; i < route.length; i++) {
-        if (start === route[i] && route.indexOf(endArray[index]) === -1) {
-          route.push(endArray[index]);
+  function optimize2(route) {
+    function repeat() {
+      function optimize3(connection) {
+        for (let i = 0; i < startArray.length; i++) {
+          if (connection === startArray[i] && route.indexOf(endArray[i]) === -1) {
+            route.push(endArray[i]);
+          }
         }
       }
+      route.forEach(optimize3);
     }
-    flightConnect.forEach(optimize3);
+    repeat();
+    repeat();
+    repeat();
+    repeat();
+    repeat();
   }
-  startArray.forEach(optimize2);
-
-  
+  flightConnect.forEach(optimize2);
 
   function optimize4(route) {
     route.shift();
@@ -125,6 +128,11 @@ function minimumAirports(startingAirport, airports, routes) {
     return b.length - a.length;
   });
 
-  
+console.log(allConnectionsArray)
+
+
+
+
+
 }
 minimumAirports(startingAirport, airports, routes);
