@@ -50,26 +50,25 @@ const airportsToConnectToLGA = [];
 
 function minimumAirports(startingAirport, airports, routes) {
   const flightConnect = routes;
-  console.log(flightConnect);
 
   const startArray = [];
   const endArray = [];
   const startArrayNoDups = [];
+  const allConnectionsArray = [];
   const flightChainsForAirportsToLGA = [];
 
   function optimize0(route, index) {
     startArray.push(route[0]);
     endArray.push(route[1]);
 
+    if (startArrayNoDups.indexOf(startArray[index]) === -1) {
+      startArrayNoDups.push(startArray[index]);
+    }
+
     route.unshift(startingAirport);
     route.pop();
-
-    if (startArrayNoDups.indexOf(endArray[index]) === -1) {
-      startArrayNoDups.push(endArray[index]);
-    }
   }
   flightConnect.forEach(optimize0);
-  console.log(flightConnect);
 
   function optimize1(route, index) {
     if (!route.includes(endArray[index]) === true) {
@@ -78,22 +77,24 @@ function minimumAirports(startingAirport, airports, routes) {
   }
   flightConnect.forEach(optimize1);
 
-  function optimize2(value, index) {
+  function optimize2(start, index) {
     function optimize3(route) {
-      if (value === route[route.length - 1] && route.indexOf(endArray[index]) === -1) {
-        route.push(endArray[index]);
+      for (let i = 0; i < route.length; i++) {
+        if (start === route[i] && route.indexOf(endArray[index]) === -1) {
+          route.push(endArray[index]);
+        }
       }
     }
     flightConnect.forEach(optimize3);
   }
   startArray.forEach(optimize2);
 
+ 
+
   function optimize4(route) {
     route.shift();
   }
   flightConnect.forEach(optimize4);
-
-  console.log(startArrayNoDups);
 
   function optimize5(start) {
     const allConnections = [start];
@@ -107,29 +108,23 @@ function minimumAirports(startingAirport, airports, routes) {
       route.forEach(optimize7);
     }
     flightConnect.forEach(optimize6);
-    return allConnections;
+    allConnectionsArray.push(allConnections);
   }
-  const allConnectionsArray = startArrayNoDups.map(optimize5);
+  startArray.forEach(optimize5);
 
   function optimize8(route) {
     route.unshift(startingAirport);
   }
   allConnectionsArray.forEach(optimize8);
 
-  console.log(flightConnect);
-  console.log(allConnectionsArray);
-
   allConnectionsArray.sort(function (a, b) {
     return b.length - a.length;
   });
+
   console.log(allConnectionsArray);
 
-  function optimize9(value, index, array) {
 
-
-
-    
-  }
+  function optimize9(value, index, array) {}
   allConnectionsArray.forEach(optimize9);
 }
 minimumAirports(startingAirport, airports, routes);
