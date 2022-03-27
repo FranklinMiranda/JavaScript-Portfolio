@@ -46,58 +46,90 @@ const routes = [
   ['SAN', 'EYW'],
 ];
 
-const fullChain = routes;
-const startArray = [];
-const endArray = [];
+const airportsToConnectToLGA = [];
 
-for (let i = 0; i < fullChain.length; i++) {
-  console.log(fullChain[i][0]);
-  startArray.push(fullChain[i][0]);
-  console.log(fullChain[i][1]);
-  endArray.push(fullChain[i][1]);
-}
+function minimumAirports(startingAirport, airports, routes) {
+  const flightConnect = routes;
+  console.log(flightConnect);
 
-console.log(startArray);
-console.log(endArray);
+  const startArray = [];
+  const endArray = [];
+  const startArrayNoDups = [];
+  const flightChainsForAirportsToLGA = [];
 
-function nextLeg(route, index, routes) {
-  console.log(endArray);
-  console.log(route[0]);
+  function optimize0(route, index) {
+    startArray.push(route[0]);
+    endArray.push(route[1]);
 
-  for (let i = 0; i < endArray.length; i++) {
-    if (route.includes(startArray[i]) === true && !route.includes(endArray[i]) === true) {
-      route.push(endArray[i]);
+    route.unshift(startingAirport);
+    route.pop();
+
+    if (startArrayNoDups.indexOf(endArray[index]) === -1) {
+      startArrayNoDups.push(endArray[index]);
     }
   }
-}
-fullChain.forEach(nextLeg);
+  flightConnect.forEach(optimize0);
+  console.log(flightConnect);
 
-console.log(fullChain);
+  function optimize1(route, index) {
+    if (!route.includes(endArray[index]) === true) {
+      route.push(endArray[index]);
+    }
+  }
+  flightConnect.forEach(optimize1);
 
-function consolidate(route, index, routes) {
-  console.log(route);
-
-  for (let i = 0; i < fullChain.length; i++) {
-    if (route[0] === fullChain[i][0]) {
-      for (let j = 0; j < route.length; j++) {
-        if (!fullChain[i].includes(route[j])) {
-          fullChain[i].push(route[j]);
-        }
+  function optimize2(value, index) {
+    function optimize3(route) {
+      if (value === route[route.length - 1] && route.indexOf(endArray[index]) === -1) {
+        route.push(endArray[index]);
       }
     }
+    flightConnect.forEach(optimize3);
   }
+  startArray.forEach(optimize2);
+
+  function optimize4(route) {
+    route.shift();
+  }
+  flightConnect.forEach(optimize4);
+
+  console.log(startArrayNoDups);
+
+  function optimize5(start) {
+    const allConnections = [start];
+
+    function optimize6(route) {
+      function optimize7(connection) {
+        if (start === route[0] && allConnections.indexOf(connection) === -1) {
+          allConnections.push(connection);
+        }
+      }
+      route.forEach(optimize7);
+    }
+    flightConnect.forEach(optimize6);
+    return allConnections;
+  }
+  const allConnectionsArray = startArrayNoDups.map(optimize5);
+
+  function optimize8(route) {
+    route.unshift(startingAirport);
+  }
+  allConnectionsArray.forEach(optimize8);
+
+  console.log(flightConnect);
+  console.log(allConnectionsArray);
+
+  allConnectionsArray.sort(function (a, b) {
+    return b.length - a.length;
+  });
+  console.log(allConnectionsArray);
+
+  function optimize9(value, index, array) {
+
+
+
+    
+  }
+  allConnectionsArray.forEach(optimize9);
 }
-fullChain.forEach(consolidate);
-
-console.log(fullChain);
-
-const startArrayNoDups = [];
-const startPointArrayNoDups = [];
-function noDups(oneChain, index, fullChain) {
-  if (!startArrayNoDups.includes(oneChain) === true && !startPointArrayNoDups.includes(oneChain[0]) === true)
-    startArrayNoDups.push(oneChain);
-  startPointArrayNoDups.push(oneChain[0]);
-}
-fullChain.forEach(noDups);
-
-console.log(startArrayNoDups);
+minimumAirports(startingAirport, airports, routes);
