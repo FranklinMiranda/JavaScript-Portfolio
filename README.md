@@ -1,2 +1,0 @@
-# jsTopics
-JavaScript Practice Topics
