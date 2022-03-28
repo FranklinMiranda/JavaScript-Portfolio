@@ -1,5 +1,5 @@
 // Closure
-console.log(new Date())
+console.log(new Date());
 
 function add(numAdd) {
   return numAdd + 1;
@@ -141,3 +141,22 @@ console.log(scoreLine1);
 console.log(scoreLine2);
 console.log(scoreLine3);
 console.log(scoreLine4);
+
+function closureFactory() {
+  let counter = 0;
+  function closureFactoryInstancer() {
+    counter++;
+    return counter;
+  }
+  return closureFactoryInstancer;
+}
+
+const closure1 = closureFactory()
+let closureInstance1 = closure1()
+closureInstance1 = closure1()
+closureInstance1 = closure1()
+console.log(closureInstance1)
+
+const closure2 = closureFactory()
+let closureInstance2 = closure2()
+console.log(closureInstance2)
