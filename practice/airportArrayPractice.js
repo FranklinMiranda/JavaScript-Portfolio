@@ -101,8 +101,6 @@ function minimumAirports(startingAirport, airports, routes) {
   }
   flightConnect.forEach(optimize4);
 
-  console.log(flightConnect);
-
   function optimize5(start) {
     const allConnections = [start];
 
@@ -119,16 +117,28 @@ function minimumAirports(startingAirport, airports, routes) {
   }
   startArrayNoDups.forEach(optimize5);
 
-  function optimize8(route) {
-    route.unshift(startingAirport);
-  }
-  allConnectionsArray.forEach(optimize8);
+  // function optimize8(route) {
+  //   route.unshift(startingAirport);
+  // }
+  // allConnectionsArray.forEach(optimize8);
 
   allConnectionsArray.sort(function (a, b) {
     return b.length - a.length;
   });
 
-console.log(allConnectionsArray)
+  console.log(allConnectionsArray);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
