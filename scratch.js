@@ -1,17 +1,16 @@
 // Scratch
-function nbDig(n, d) {
-  const squareArray = [];
-  const result = 0;
-  for (let i = 0; i <= Math.sqrt(n); i++) {
-    toString(squareArray.push(i ** 2));
+function drawStairs(n) {
+  for (let i = 0; i < n; i++) {
+    let total = '*';
+    for (let j = n - i; j > 0; j--) {
+      total = ' ' + total;
+    }
+
+    for (let k = n - i; k < n; k++) {
+      total = total + '*';
+    }
+    console.log(total);
   }
-  
-  for (const value of squareArray) {
-      console.log()
-
-  }
-
-
 }
 
-console.log(nbDig(5750, 0));
+drawStairs(5);
