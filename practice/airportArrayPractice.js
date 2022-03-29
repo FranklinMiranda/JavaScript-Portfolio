@@ -49,7 +49,7 @@ const routes = [
 const airportsToConnectToLGA = [];
 
 function minimumAirports(startingAirport, airports, routes) {
-  const flightConnect = routes;
+  const flightConnect = [...routes];
 
   const startArray = [];
   const endArray = [];
@@ -76,7 +76,8 @@ function minimumAirports(startingAirport, airports, routes) {
     }
   }
   flightConnect.forEach(optimize1);
-
+console.log(flightConnect)
+console.log(routes)
   function optimize2(route) {
     function repeat() {
       function optimize3(connection) {

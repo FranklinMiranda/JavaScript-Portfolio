@@ -1,3 +1,7 @@
 // Scratch
-console.log(new Date());
-
+function XO(str) {
+  const x = str.match(/x/gi);
+  const o = str.match(/o/gi);
+  return (x && x.length) === (o && o.length);
+}
+console.log(XO('xxxm'));

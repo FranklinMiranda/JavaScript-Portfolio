@@ -137,3 +137,12 @@ function dupNum(array) {
 }
 
 console.log(dupNum(nestedArr));
+
+
+// Object. 
+// Oject.keys() Object.values(), Object.entries()
+
+const array1 = [1, 3, 5, 9, 12]
+
+const optimize = (value, index, array) => value > 8;
+console.log(array1.findIndex(optimize))

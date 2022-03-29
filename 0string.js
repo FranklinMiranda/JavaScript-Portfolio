@@ -107,3 +107,12 @@ console.log(string6.endsWith("I"));
 let insert = 9;
 let sentance = `The number is ${insert}`;
 console.log(sentance);
+
+// .split and .join 
+function solution(str){
+    return str.split('').reverse().join('');  
+  }
+  
+  
+  console.log(solution('world'));
+  
