@@ -1,7 +1,12 @@
 // Scratch
-function XO(str) {
-  const x = str.match(/x/gi);
-  const o = str.match(/o/gi);
-  return (x && x.length) === (o && o.length);
+function getSum( a,b )
+{
+let array = [a, b]
+
+
+
+
+
 }
-console.log(XO('xxxm'));
+
+console.log(getSum(0,-1))
