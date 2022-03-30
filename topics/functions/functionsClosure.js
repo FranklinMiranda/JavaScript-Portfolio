@@ -231,3 +231,60 @@ console.log(new Date());
   console.log(addByTwoOnce(10)); //should log 7
   console.log(addByTwoOnce(9001)); //should log 7
 })();
+
+(function delayExample() {
+  function delay(callback, waitTime) {
+    return function () {
+      return setTimeout(callback, waitTime);
+    };
+  }
+  let count = 0;
+  const delayedFunc = delay(() => count++, 1000);
+  delayedFunc();
+  console.log(count); // should print '0'
+  setTimeout(() => console.log(count), 1000); // should print '1' after 1 second
+})();
+
+(function saveOutputExample() {
+  function saveOutput(func, string) {
+    const obj = {};
+    return function (input) {
+      if (input === string) {
+        return obj;
+      } else {
+        obj[input] = func(input);
+        return func(input);
+      }
+    };
+  }
+
+  const multiplyBy2 = function (num) {
+    return num * 2;
+  };
+  const multBy2AndLog = saveOutput(multiplyBy2, 'boo');
+  console.log(multBy2AndLog(2)); // should log: 4
+  console.log(multBy2AndLog(9)); // should log: 18
+  console.log(multBy2AndLog('boo')); // should log: { 2: 4, 9: 18 }
+})();
+
+(function cycleIteratorExample() {
+  function cycleIterator(array) {
+   let i = 0;
+   return function () {
+     const result = array[i++];
+     if (i >= array.length) {i = 0}
+     return result
+   }
+  }
+
+  const threeDayWeekend = ['Fri', 'Sat', 'Sun'];
+  const getDay = cycleIterator(threeDayWeekend);
+  console.log(getDay()); // should log: 'Fri'
+  console.log(getDay()); // should log: 'Sat'
+  console.log(getDay()); // should log: 'Sun'
+  console.log(getDay()); // should log: 'Fri'
+})();
+
+(function () {
+
+})();
