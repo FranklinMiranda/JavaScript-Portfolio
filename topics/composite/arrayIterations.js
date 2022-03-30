@@ -3,6 +3,7 @@ console.log(new Date())
 
 // JavaScript Array Iteration operates over every array item
 // array.forEach Method calls a callback function on each element in an array
+
 const cars = ["audi", "bmw", "mercedes"];
 const carsUpper = [];
 
