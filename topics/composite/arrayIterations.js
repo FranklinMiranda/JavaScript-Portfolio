@@ -147,3 +147,9 @@ const array1 = [1, 3, 5, 9, 12]
 
 const optimize = (value, index, array) => value > 8;
 console.log(array1.findIndex(optimize))
+
+// Spread Syntax
+let numberStore = [0, 1, 2];
+let newNumber = 12;
+console.log(numberStore = [...numberStore, newNumber]);
+
