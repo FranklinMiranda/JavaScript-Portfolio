@@ -1,4 +1,5 @@
 // JavaScript Refresher Practice
+console.log(new Date())
 // JavaScript, HTML, CSS are front end webpage languages
 // HTML is the structure, CSS is the styling, and JavaScript is the logic and instructions
 

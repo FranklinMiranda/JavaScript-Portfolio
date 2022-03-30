@@ -1,4 +1,4 @@
-// Boolean, Null, and Undefined
+// Booleans, Nulls, and Undefineds
 console.log(new Date())
 
 const testArray = [];

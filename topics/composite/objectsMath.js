@@ -1,4 +1,4 @@
-// Math
+// Math Objects
 console.log(new Date())
 
 // Math object has no constructor and can be used before being created

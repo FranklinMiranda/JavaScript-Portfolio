@@ -1,4 +1,4 @@
-// Callback and Higher Order Function
+// Callbacks and Higher Order Functions
 console.log(new Date());
 
 function eitherCallback(callback1, callback2) {

@@ -1,4 +1,5 @@
 // JavaScript Practice
+console.log(new Date())
 
 // JavaScript Strings Practice
 // JavaScript String Methods

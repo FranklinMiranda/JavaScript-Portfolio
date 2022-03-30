@@ -1,4 +1,4 @@
-// Array Iteration
+// Arrays Iteration
 console.log(new Date())
 
 // JavaScript Array Iteration operates over every array item

@@ -1,4 +1,4 @@
-// Variable
+// Variables
 console.log(new Date());
 
 

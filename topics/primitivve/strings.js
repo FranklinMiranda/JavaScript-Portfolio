@@ -1,4 +1,4 @@
-// String
+// Strings
 console.log(new Date())
 
 // JavaScript strings are used for storing and manipulating data

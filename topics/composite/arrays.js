@@ -1,4 +1,4 @@
-// Array
+// Arrays
 console.log(new Date())
 
 // JavaScript Arrays Refresher Practice

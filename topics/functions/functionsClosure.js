@@ -1,4 +1,4 @@
-// Closure
+// Closures in Functions
 console.log(new Date());
 
 function add(numAdd) {

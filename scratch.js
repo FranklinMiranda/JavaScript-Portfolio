@@ -1,4 +1,6 @@
 // Scratch
+console.log(new Date())
+
 function nbDig(n, d) {
   const squareArray = [];
   const result = 0;
