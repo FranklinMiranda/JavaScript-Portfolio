@@ -1,5 +1,5 @@
 // Airport Array Mock Interview Question
-// Prompt
+console.log(new Date())
 
 const startingAirport = 'LGA';
 

@@ -1,4 +1,4 @@
-// Loop
+// Loops
 console.log(new Date())
 
 // For Loop (Loops through code block depending on the initializer, conditional, and iterator statements)

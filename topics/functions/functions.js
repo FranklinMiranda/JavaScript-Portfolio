@@ -1,4 +1,4 @@
-// Function
+// Functions
 console.log(new Date())
 
 // JavaScript Functions

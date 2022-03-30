@@ -1,16 +1,20 @@
 // Scratch
-function drawStairs(n) {
-  for (let i = 0; i < n; i++) {
-    let total = '*';
-    for (let j = n - i; j > 0; j--) {
-      total = ' ' + total;
-    }
+console.log(new Date());
 
-    for (let k = n - i; k < n; k++) {
-      total = total + '*';
+function repeater(char) {
+  let counter = 1;
+  repeat();
+  function repeat() {
+    if (counter === 5) {
+      return;
     }
-    console.log(total);
+    char = char + char[0];
+    counter++;
+    repeat();
   }
+
+  return char;
 }
 
-drawStairs(5);
+console.log(repeater('g'));
+console.log(repeater('j'));

@@ -1,8 +1,9 @@
-// Array Iteration
+// Arrays Iteration
 console.log(new Date())
 
 // JavaScript Array Iteration operates over every array item
 // array.forEach Method calls a callback function on each element in an array
+
 const cars = ["audi", "bmw", "mercedes"];
 const carsUpper = [];
 
@@ -146,3 +147,9 @@ const array1 = [1, 3, 5, 9, 12]
 
 const optimize = (value, index, array) => value > 8;
 console.log(array1.findIndex(optimize))
+
+// Spread Syntax
+let numberStore = [0, 1, 2];
+let newNumber = 12;
+console.log(numberStore = [...numberStore, newNumber]);
+

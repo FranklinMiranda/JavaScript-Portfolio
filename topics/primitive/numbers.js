@@ -1,4 +1,4 @@
-// Number
+// Numbers
 console.log(new Date())
 
 // JavaScript Numbers are always 64-bit Floating Point numbers

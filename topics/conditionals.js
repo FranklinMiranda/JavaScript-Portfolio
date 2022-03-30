@@ -1,4 +1,4 @@
-// Conditional Statement
+// Conditionals
 console.log(new Date())
 
 // If Else if Else Statements

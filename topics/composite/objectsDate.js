@@ -1,4 +1,4 @@
-// Date
+// Date Objects
 console.log(new Date())
 
 // JavaScript Date Objects

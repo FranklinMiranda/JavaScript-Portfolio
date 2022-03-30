@@ -1,4 +1,4 @@
-// Object
+// Objects
 console.log(new Date());
 
 function objFactory(name, age) {
