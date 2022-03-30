@@ -15,3 +15,7 @@ const baseObject = {
 const person1 = objFactory('Franklin', 23)
 
 console.log(person1.greeting())
+
+
+
+// Prototypal Chain can be used to create different objects with different levels for shared key: value pairs
