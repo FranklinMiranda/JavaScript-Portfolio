@@ -1,20 +1,17 @@
 // Scratch
 console.log(new Date());
 
-function repeater(char) {
-  let counter = 1;
-  repeat();
-  function repeat() {
-    if (counter === 5) {
-      return;
-    }
-    char = char + char[0];
-    counter++;
-    repeat();
-  }
+function cascade(number, array = []) {
 
-  return char;
+
 }
 
-console.log(repeater('g'));
-console.log(repeater('j'));
+cascade(111);
+// should print
+/*
+111
+11
+1
+11
+111
+*/
