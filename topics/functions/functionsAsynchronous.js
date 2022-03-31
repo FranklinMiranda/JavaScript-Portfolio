@@ -22,3 +22,12 @@ setTimeout(() => {
 setTimeout(() => {
   console.log(3);
 }, 1000);
+
+
+(function () {
+
+})();
+
+(function () {
+
+})();
