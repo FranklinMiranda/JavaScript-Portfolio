@@ -153,3 +153,8 @@ let numberStore = [0, 1, 2];
 let newNumber = 12;
 console.log(numberStore = [...numberStore, newNumber]);
 
+
+
+// Counting all occurences in Objects
+// const cache = {}
+// array.forEach(num => {cache[num] ? cache[num] += 1 : cache[num] = 1})
