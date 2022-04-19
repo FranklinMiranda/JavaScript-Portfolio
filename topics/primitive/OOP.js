@@ -1,5 +1,5 @@
-// Scratch
-console.log(new Date());
+// OOP 
+console.log(new Date (2022, 3,19,16,04))
 
 // 4 ways to create objects
 // Object Literal Declaration
