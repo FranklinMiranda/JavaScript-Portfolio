@@ -34,6 +34,8 @@ class person {
     this.name = input 
   }
   greeting () {return `Hello Class ${this.name}!`}
+  classProperty = 'classProperty'
+  classProperty0 = 'classProperty0'
 }
 
 const person3 = new person('franklin')
@@ -51,4 +53,4 @@ class miranda extends person {
 
 const person4 = new miranda('franklin');
 console.log(person4.greeting)
-
+console.log(person3.classProperty)
