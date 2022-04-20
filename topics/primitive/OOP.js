@@ -38,3 +38,17 @@ class person {
 
 const person3 = new person('franklin')
 console.log(person3.greeting())
+
+
+// Subclassing
+class miranda extends person {
+    constructor (input) {
+        super(input)
+        this.name = input;
+    }
+    get greeting () {return `Hello subclass ${this.name}!`};
+}
+
+const person4 = new miranda('franklin');
+console.log(person4.greeting)
+
