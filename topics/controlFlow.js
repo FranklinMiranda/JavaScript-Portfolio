@@ -1,4 +1,4 @@
-// Conditionals
+// Control Flow
 console.log(new Date())
 
 // If Else if Else Statements

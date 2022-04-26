@@ -54,3 +54,13 @@ class miranda extends person {
 const person4 = new miranda('franklin');
 console.log(person4.greeting)
 console.log(person3.classProperty)
+
+
+
+// Static Class Methods => Methods onl;y accessible by the class not the created objects
+class Animal {
+  constructor () {}
+  static hello () {return console.log('Hello')}
+}
+
+Animal.hello()
