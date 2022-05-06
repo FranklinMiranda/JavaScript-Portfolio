@@ -47,21 +47,29 @@ const routes = [
 ];
 
 function airportConnections(startPortVal, portsArr, routesArr) {
-  // Declaring Unique Ending Connections Arr
+  // Declaring Unique Starting and Ending Connections Arr
+  let startPortArr = routesArr.map(function (value) {
+    return value[0];
+  });
+  startPortArr = [...new Set(startPortArr)];
+  console.log(startPortArr);
   let endPortArr = routesArr.map(function (value) {
     return value[1];
   });
   endPortArr = [...new Set(endPortArr)];
   console.log(endPortArr);
   // Route Chain Mapper Function
-  const chainMapArr = routesArr.map(function (routeArr, i) {
+  const chainMapArr = routesArr.map(function (routeArr) {
     // Adding Starting Airport to start of Every Route, then poping it off the end of any route that currently has it
     routeArr.unshift(startPortVal);
     if (routeArr[routeArr.length - 1] === startPortVal) {
       routeArr.pop();
     }
-    // Adding the next airport along the chain for every route in the routesArr
-    for (let i = 1; i < routeArr.length; i++) {
+
+    
+    // Adding the next airport along the chain for every route in the routesArr, remove starting route first
+    routeArr.shift()
+    for (let i = 0; i < routeArr.length; i++) {
       // Iterating over the routesArr to add the next connection for every airportVal in the Chain Map Arr
       routesArr.forEach(function (routesArr) {
         if (routesArr[0] === routeArr[i] && !routeArr.includes(routesArr[1])) {
@@ -79,4 +87,7 @@ function airportConnections(startPortVal, portsArr, routesArr) {
   console.log(chainMapArr);
 }
 
-airportConnections(startingAirport, airports, routes);
+let sPV = startingAirport;
+let portsArr = airports.slice();
+let routesArr = routes.slice();
+airportConnections(sPV, portsArr, routesArr);
