@@ -1,5 +1,5 @@
 // Airport Array Mock Interview Question
-console.log(new Date())
+console.log(new Date(2022, 4, 6, 6, 37));
 
 const startingAirport = 'LGA';
 
@@ -46,104 +46,37 @@ const routes = [
   ['SAN', 'EYW'],
 ];
 
-const airportsToConnectToLGA = [];
-
-function minimumAirports(startingAirport, airports, routes) {
-  const flightConnect = [...routes];
-
-  const startArray = [];
-  const endArray = [];
-  const startArrayNoDups = [];
-  const allConnectionsArray = [];
-  const testArray = [startingAirport];
-
-  function optimize0(route, index) {
-    startArray.push(route[0]);
-    endArray.push(route[1]);
-
-    if (startArrayNoDups.indexOf(startArray[index]) === -1) {
-      startArrayNoDups.push(startArray[index]);
+function airportConnections(startPortVal, portsArr, routesArr) {
+  // Declaring Unique Ending Connections Arr
+  let endPortArr = routesArr.map(function (value) {
+    return value[1];
+  });
+  endPortArr = [...new Set(endPortArr)];
+  console.log(endPortArr);
+  // Route Chain Mapper Function
+  const chainMapArr = routesArr.map(function (routeArr, i) {
+    // Adding Starting Airport to start of Every Route, then poping it off the end of any route that currently has it
+    routeArr.unshift(startPortVal);
+    if (routeArr[routeArr.length - 1] === startPortVal) {
+      routeArr.pop();
     }
-
-    route.unshift(startingAirport);
-    route.pop();
-  }
-  flightConnect.forEach(optimize0);
-
-  function optimize1(route, index) {
-    if (!route.includes(endArray[index]) === true) {
-      route.push(endArray[index]);
-    }
-  }
-  flightConnect.forEach(optimize1);
-console.log(flightConnect)
-console.log(routes)
-  function optimize2(route) {
-    function repeat() {
-      function optimize3(connection) {
-        for (let i = 0; i < startArray.length; i++) {
-          if (connection === startArray[i] && route.indexOf(endArray[i]) === -1) {
-            route.push(endArray[i]);
-          }
+    // Adding the next airport along the chain for every route in the routesArr
+    for (let i = 1; i < routeArr.length; i++) {
+      // Iterating over the routesArr to add the next connection for every airportVal in the Chain Map Arr
+      routesArr.forEach(function (routesArr) {
+        if (routesArr[0] === routeArr[i] && !routeArr.includes(routesArr[1])) {
+          routeArr.push(routesArr[1]);
         }
-      }
-      route.forEach(optimize3);
+      });
     }
-    repeat();
-    repeat();
-    repeat();
-    repeat();
-    repeat();
-  }
-  flightConnect.forEach(optimize2);
 
-  function optimize4(route) {
-    route.shift();
-  }
-  flightConnect.forEach(optimize4);
-
-  function optimize5(start) {
-    const allConnections = [start];
-
-    function optimize6(route) {
-      function optimize7(connection) {
-        if (start === route[0] && allConnections.indexOf(connection) === -1) {
-          allConnections.push(connection);
-        }
-      }
-      route.forEach(optimize7);
-    }
-    flightConnect.forEach(optimize6);
-    allConnectionsArray.push(allConnections);
-  }
-  startArrayNoDups.forEach(optimize5);
-
-  // function optimize8(route) {
-  //   route.unshift(startingAirport);
-  // }
-  // allConnectionsArray.forEach(optimize8);
-
-  allConnectionsArray.sort(function (a, b) {
+    return routeArr;
+  });
+  // Sorting Chain Map Array by length descending
+  chainMapArr.sort(function (a, b) {
     return b.length - a.length;
   });
-
-  console.log(allConnectionsArray);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  console.log(chainMapArr);
 }
-minimumAirports(startingAirport, airports, routes);
+
+airportConnections(startingAirport, airports, routes);
