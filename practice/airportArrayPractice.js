@@ -68,8 +68,8 @@ function airportConnections(startPortVal, portsArr, routesArr) {
 
     
     // Adding the next airport along the chain for every route in the routesArr, remove starting route first
-    routeArr.shift()
-    for (let i = 0; i < routeArr.length; i++) {
+    //routeArr.shift()
+    for (let i = 1; i < routeArr.length; i++) {
       // Iterating over the routesArr to add the next connection for every airportVal in the Chain Map Arr
       routesArr.forEach(function (routesArr) {
         if (routesArr[0] === routeArr[i] && !routeArr.includes(routesArr[1])) {
