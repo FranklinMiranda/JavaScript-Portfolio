@@ -1,31 +1,52 @@
 // Scratch
 console.log(new Date());
 
-const name = 'franklAin';
-
-console.log(name.search(/a/));
-
-const name0 = name.replace(/a/gi, 'f');
-console.log(name0);
-
-function closureFunc(counter = 0) {
-  return function recursive(num = 0) {
-    if (counter > 10) {
-      console.log(counter)
-        return counter;
-    } else {
-      counter += num;
-      console.log(counter)
-      return recursive(num);
+// Closure
+function counterFactory () {
+    let counter = 0;
+    return function (num = 0) {
+        counter += num;
+        return counter
     }
-  };
 }
 
-const closureFunc1 = closureFunc(1);
-console.log(closureFunc1(2))
+const counter0 = counterFactory()
+const counter1 = counterFactory()
+
+counter0(1)
+counter0(2)
+counter1(4)
+
+console.log(counter0())
+console.log(counter1())
 
 
-const testArray = [1,2,3,4,5,6,7,8,9,0];
-const testObj = {1:1, 2:2,3:3}
-console.log(testArray.constructor)
-console.log(testObj.constructor)
+// Recursion 
+function factorialize (num = 1) {
+    if (num <= 1) {return 1}
+    return num * factorialize(num - 1)
+}
+
+console.log(factorialize())
+
+// Recursion and Closure
+function once (callback) {
+    let counter = 0;
+    let result;
+    return function (num) {
+        if (counter < 1) {
+        counter++
+        result = callback(num)
+         return callback(num)}
+         else {return result}
+    }
+}
+
+const fact = function (num = 1) {
+    if (num <= 1) {return 1}
+    return num * fact (num - 1)
+}
+
+const factorial = once(fact);
+console.log(factorial(4))
+console.log(factorial(6))
