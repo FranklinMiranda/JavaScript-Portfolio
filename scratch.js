@@ -50,3 +50,10 @@ const fact = function (num = 1) {
 const factorial = once(fact);
 console.log(factorial(4))
 console.log(factorial(6))
+
+
+
+
+
+
+
