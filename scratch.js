@@ -55,5 +55,21 @@ console.log(factorial(6))
 
 
 
+function reverseString (str) {
+    let result = [];
+    str = str.split(' ')
+    for (let i = str.length; i > 0; i--) {
+        result[result.length] = str[i - 1]
+    }
+    result = result.join(' ')
+    return result
+}
+
+console.log(reverseString('one two'))
+
+
+
+
+
 
 
