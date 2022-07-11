@@ -68,7 +68,7 @@ function reverseString (str) {
 console.log(reverseString('one two'))
 
 
-// Hello
+
 
 
 
