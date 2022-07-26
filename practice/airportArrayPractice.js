@@ -1,7 +1,7 @@
 // Airport Array Mock Interview Question
 console.log(new Date(2022, 4, 6, 6, 37));
 
-const startingAirport = 'LGA';
+const mainAirport = 'LGA';
 
 const airports = [
   'BGI',
@@ -46,48 +46,53 @@ const routes = [
   ['SAN', 'EYW'],
 ];
 
-function airportConnections(startPortVal, portsArr, routesArr) {
-  // Declaring Unique Starting and Ending Connections Arr
-  let startPortArr = routesArr.map(function (value) {
-    return value[0];
-  });
-  startPortArr = [...new Set(startPortArr)];
-  console.log(startPortArr);
-  let endPortArr = routesArr.map(function (value) {
-    return value[1];
-  });
-  endPortArr = [...new Set(endPortArr)];
-  console.log(endPortArr);
-  // Route Chain Mapper Function
-  const chainMapArr = routesArr.map(function (routeArr) {
-    // Adding Starting Airport to start of Every Route, then poping it off the end of any route that currently has it
-    routeArr.unshift(startPortVal);
-    if (routeArr[routeArr.length - 1] === startPortVal) {
-      routeArr.pop();
-    }
+function airportConnections (mainAirportStr, airportsArr, routesArr) {
+  console.log(mainAirportStr);
+  console.log(airportsArr);
+  console.log(routesArr);
 
-    
-    // Adding the next airport along the chain for every route in the routesArr, remove starting route first
-    //routeArr.shift()
-    for (let i = 1; i < routeArr.length; i++) {
-      // Iterating over the routesArr to add the next connection for every airportVal in the Chain Map Arr
-      routesArr.forEach(function (routesArr) {
-        if (routesArr[0] === routeArr[i] && !routeArr.includes(routesArr[1])) {
-          routeArr.push(routesArr[1]);
-        }
-      });
-    }
+  
 
-    return routeArr;
-  });
-  // Sorting Chain Map Array by length descending
-  chainMapArr.sort(function (a, b) {
-    return b.length - a.length;
-  });
-  console.log(chainMapArr);
+
 }
 
-let sPV = startingAirport;
-let portsArr = airports.slice();
-let routesArr = routes.slice();
-airportConnections(sPV, portsArr, routesArr);
+airportConnections(mainAirport, airports, routes)
+
+// function airportConnections(startPortVal, portsArr, routesArr) {
+//   let startPortArr = routesArr.map(function (value) {
+//     return value[0];
+//   });
+
+//   let endPortArr = routesArr.map(function (value) {
+//     return value[1];
+//   });
+
+//   startPortArr = [...new Set(startPortArr)];
+//   endPortArr = [...new Set(endPortArr)];
+
+//   const chainMapArr = routesArr.map(function (routeArr) {
+//     routeArr.unshift(startPortVal);
+//     if (routeArr[routeArr.length - 1] === startPortVal) {
+//       routeArr.pop();
+//     }
+
+//     for (let i = 1; i < routeArr.length; i++) {
+//       routesArr.forEach(function (routesArr) {
+//         if (routesArr[0] === routeArr[i] && !routeArr.includes(routesArr[1])) {
+//           routeArr.push(routesArr[1]);
+//         }
+//       });
+//     }
+
+//     return routeArr;
+//   });
+
+//   chainMapArr.sort(function (a, b) {
+//     return b.length - a.length;
+//   });
+// }
+
+// let sPV = startPort;
+// let portsArr = airports.slice();
+// let routesArr = routes.slice();
+// airportConnections(sPV, portsArr, routesArr);
