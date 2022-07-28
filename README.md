@@ -1,7 +1,12 @@
 JavaScript Portfolio
 
-async - promise objects modules
-callbacks and higher order functions
-closure
-recursion
-Object Oriented Programming - classes
+Functional Programming 
+    Callbacks, Recursion, Closure
+
+Object Oriented Programming
+    Classes
+
+Event Driven Programming
+    Promises, Modules
+
+
