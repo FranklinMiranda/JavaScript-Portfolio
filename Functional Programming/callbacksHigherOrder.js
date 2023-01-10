@@ -57,3 +57,8 @@ const someTest = arr.some((el) => {
     return el > 30
 })
 console.log(someTest)
+
+// indexOf Method searches an array for an element value and returns it position
+console.log(arr.indexOf((36)))
+
+//
