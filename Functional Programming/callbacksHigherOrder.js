@@ -59,6 +59,8 @@ const someTest = arr.some((el) => {
 console.log(someTest)
 
 // indexOf Method searches an array for an element value and returns it position
-console.log(arr.indexOf((36)))
+console.log(arr.indexOf(36))
 
-//
+// lastIndexOf Method searches an array for the last occurrence of an element and returns its position
+console.log(arr.lastIndexOf(36))
+
