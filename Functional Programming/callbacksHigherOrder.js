@@ -12,4 +12,48 @@ function numSort (a,b) {
 
 console.log(numArr.sort(numSort))
 
-// 
+// Array Iteration Methods utilize callbacks and higher order functions to iterate over arrays
+// forEach Higher Order Method takes a callback and performs it on each element in an array
+let arr = [1,2,3,4,5,6,7,8,9]
+arr.forEach((element, index, array) => {
+    array[index] = element + element
+})
+console.log(arr)
+
+// map Higher Order Method takes a callback and performs it on each element in the array and returns a new array
+arr = arr.map((el) => {
+    return el * 2
+})
+console.log(arr)
+
+// filter Method takes a callback are creates a new array with the elements that pass the callback
+arr = arr.filter((el) => {
+    return el > 10
+})
+console.log(arr)
+
+// reduce Method runs on an array and returns a single value
+const result = arr.reduce((total, el) => {
+    total += el
+    return total
+},0)
+console.log(result)
+
+// reduceRight Method runs on an array and returns a single value working from right to left
+const resultRight = arr.reduceRight((total, el) => {
+    total += el
+    return total
+}, 0)
+console.log(resultRight)
+
+// every Method checks if every element in the Array passes the callback and returns true or false
+const test = arr.every((el) => {
+    return el % 2 === 0
+})
+console.log(test)
+
+// some Method checks if some elements in the Array pass the callback and returns true or false
+const someTest = arr.some((el) => {
+    return el > 30
+})
+console.log(someTest)
