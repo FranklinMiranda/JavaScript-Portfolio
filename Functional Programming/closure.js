@@ -21,4 +21,19 @@ console.log(addByTwo(3))
 console.log(addByTwo(3))
 
 
+// Multiple Counter Example with Closure
+function counter () {
+    let count = 0
+    return function () {
+        count ++
+        console.log(count)
+    }
+}
 
+const counter1 = counter()
+const counter2 = counter()
+
+counter1()
+counter1()
+counter1()
+counter2()
