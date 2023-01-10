@@ -64,3 +64,25 @@ console.log(arr.indexOf(36))
 // lastIndexOf Method searches an array for the last occurrence of an element and returns its position
 console.log(arr.lastIndexOf(36))
 
+// find Method returns the value of the first element to pass the callback
+console.log(arr.find((el) => {return el > 18}))
+
+// findIndex Method returns the index of the first element in an array to pass the callback 
+console.log(arr.findIndex((el) => {return el > 18}))
+
+// Array.from Method returns an array from any object with a length property or any iterable object
+const alphabet = Array.from("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+console.log(alphabet)
+
+// Array.keys Method returns an Array Iterator object from the keys of a array
+const keys = alphabet.keys()
+for (let key of keys) {
+    //console.log(key)
+}
+
+// Array.entries Method creates a array iterator object that contains key value pairs
+const entries = alphabet.entries()
+for (let entry of entries) {
+    //console.log(entry)
+}
+
