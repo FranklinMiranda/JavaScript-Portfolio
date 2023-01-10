@@ -5,7 +5,7 @@
 
 
 // Closure example with Once 
-// The counter variablle is in addByTwo's closure and is still accessible because it is saved because it is accessed in the function body
+// The counter variable is in addByTwo's closure and is still accessible because it is saved because it is accessed in the function body
 function once (call) {
     let counter = 0
     return function (input) {
