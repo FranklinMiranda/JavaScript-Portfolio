@@ -81,3 +81,4 @@ function shuffleCards(arr1, arr2) {
 const topHalf = ['Queen of Diamonds', 'Five of Hearts', 'Ace of Spades', 'Eight of Clubs'];
 const bottomHalf = ['Jack of Hearts', 'Ten of Spades'];
 console.log(shuffleCards(topHalf, bottomHalf));
+
