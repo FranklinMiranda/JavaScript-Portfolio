@@ -38,4 +38,23 @@ const arr3 = [42, 3, 19, 7, 8];
 // Function Intersection Invocation
 console.log(intersection([arr1, arr2, arr3]));
 
+// Pseudocode for a Constructed forEach Function
+// First declare the function forEach that accepts a call and arr
+function forEach(call, arr) {
+  // Inside the function body loop over the arr
+  for (let i = 0; i < arr.length; i++) {
+    // Inside the loop perform the call on each element in the arr
+    console.log(call(arr[i]));
+  }
+}
+
+// Declare a call function to pass into the forEach
+function call(num) {
+  return num * 2;
+}
+// Declare an arr to pass into the forEach
+const arr = [2, 3, 4, 5];
+
+forEach(call, arr);
+
 
