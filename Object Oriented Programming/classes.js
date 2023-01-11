@@ -22,8 +22,8 @@ console.log(franklin.greeting());
 class miranda extends person {
   constructor(name, age) {
     super(name);
-    // After this.age is added to the miranda constructor, the anna object has age property initialized 
-    this.age = age + 1
+    // After this.age is added to the miranda constructor, the anna object has age property initialized
+    this.age = age + 1;
   }
 }
 
