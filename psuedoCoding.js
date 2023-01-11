@@ -62,13 +62,13 @@ forEach(call, arr);
 function once() {
   // Inside once declare a count variable
   let count = 0;
-  // Declare the anonymous function returned from once, that accepts a input
+  // Declare the anonymous function returned from once, that accepts an input
   return function (input) {
-    // An if statement checks if counter is equal to zero, then returns a string
+    // An if statement checks if count is equal to one, then return a string
     if (count === 1) {
       return 'This function has been invoked once!';
     }
-    // Otherwise Increment Counter by 1
+    // Otherwise Increment Count by 1
     count++;
     // Return Input * 2
     return input * 2;
@@ -77,5 +77,32 @@ function once() {
 
 // Declare a variable and assign it to the invocation of once
 const operation = once();
-// Invoke the variable with the assigned result
+// Invoke the variable with the assigned returned function and input parameter passed
 console.log(operation(3));
+console.log(operation(3));
+
+// Pseudocode for Once Function with inline call passed in
+// Declare function once with a call parameter passed in
+function onces(call) {
+  // Declare a counter variable and set it equal to 0
+  let counter = 0;
+  // return a anonymous function that accepts a input parameter
+  return function (input) {
+    // The anonymous function has a if statement that checks if counter is equal to one and returns a string
+    if (counter === 1) {
+      return 'This function has been invoked once!';
+    }
+    // Then increment counter by one
+    counter++;
+    // then return call with input passed in as a parameter
+    return call(input);
+  };
+}
+
+// Declare a variable assigned to the invocation of once with a inline function passed in as the parameter
+const multiplyByTwo = onces((input) => {
+  return input * 2;
+});
+// Invoke the variable with a input parameter passed in
+console.log(multiplyByTwo(2));
+console.log(multiplyByTwo(2));
