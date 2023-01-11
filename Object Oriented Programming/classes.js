@@ -31,5 +31,4 @@ const anna = new miranda('anna', 21);
 console.log(anna.name);
 // Because the super call does not pass in the age parameter age is not defined on anna object
 console.log(anna.age);
-
 console.log(anna.greeting());
