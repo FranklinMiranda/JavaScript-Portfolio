@@ -17,6 +17,8 @@ const franklin = new person('franklin', 24);
 
 console.log(franklin.name);
 console.log(franklin.greeting());
+console.log(franklin);
+console.log(franklin.__proto__);
 
 // The super call calls the super class constructor and pass in all provided parameters
 class miranda extends person {
@@ -31,4 +33,8 @@ const anna = new miranda('anna', 21);
 console.log(anna.name);
 // Because the super call does not pass in the age parameter age is not defined on anna object
 console.log(anna.age);
+// anna.greeting() access the greeting method from the person constructor
 console.log(anna.greeting());
+// anna.__proto__ access the person constructor and anna.__proto__.__proto__ access the prototype object of the person constructor
+console.log(anna.__proto__);
+console.log(anna.__proto__.__proto__);
