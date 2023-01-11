@@ -59,3 +59,25 @@ function subtract10(num) {
 }
 const arrayOfFunctions = [multiplyBy2, add7, modulo4, subtract10];
 console.log(flow(2, arrayOfFunctions));
+
+// Shuffle Cards recursive function shuffles a deck of cards recursively
+function shuffleCards(arr1, arr2) {
+  const result = [];
+  function recurse(i = 0) {
+    if (!arr1[i]) {
+      result.push(...arr2.slice(i));
+      return result;
+    } else if (!arr2[i]) {
+      result.push(...arr1.slice(i));
+      return result;
+    }
+
+    result.push(arr1[i], arr2[i]);
+    return recurse((i += 1));
+  }
+  return recurse();
+}
+
+const topHalf = ['Queen of Diamonds', 'Five of Hearts', 'Ace of Spades', 'Eight of Clubs'];
+const bottomHalf = ['Jack of Hearts', 'Ten of Spades'];
+console.log(shuffleCards(topHalf, bottomHalf));
