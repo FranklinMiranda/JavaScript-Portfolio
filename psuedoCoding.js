@@ -57,4 +57,25 @@ const arr = [2, 3, 4, 5];
 
 forEach(call, arr);
 
+// Pseudocode for Once Function using closure
+// Declare my once function
+function once() {
+  // Inside once declare a count variable
+  let count = 0;
+  // Declare the anonymous function returned from once, that accepts a input
+  return function (input) {
+    // An if statement checks if counter is equal to zero, then returns a string
+    if (count === 1) {
+      return 'This function has been invoked once!';
+    }
+    // Otherwise Increment Counter by 1
+    count++;
+    // Return Input * 2
+    return input * 2;
+  };
+}
 
+// Declare a variable and assign it to the invocation of once
+const operation = once();
+// Invoke the variable with the assigned result
+console.log(operation(3));
