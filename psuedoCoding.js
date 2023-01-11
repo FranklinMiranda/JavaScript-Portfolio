@@ -106,3 +106,36 @@ const multiplyByTwo = onces((input) => {
 // Invoke the variable with a input parameter passed in
 console.log(multiplyByTwo(2));
 console.log(multiplyByTwo(2));
+
+// Pseudocoding for Symmetric Differences Function
+// Declare symmetric function that accepts two arrays as parameters
+function symmetric(arr1, arr2) {
+  // Declare a results array
+  const result = [];
+  // Loop over the first argument array
+  arr1.forEach((el) => {
+    // In the loop use includes method to check if each element being looped over is present in the second array
+    // Push any element not present in the second array into the results array
+    if (!arr2.includes(el)) {
+      result.push(el);
+    }
+  });
+
+  // In the loop use includes method to check if each element being looped over is present in the first array
+  // Push any element not present in the first array into the results array
+  arr2.forEach((el) => {
+    if (!arr1.includes(el)) {
+      result.push(el);
+    }
+  });
+
+  // Return results array
+  return result;
+}
+
+// Declare two arrays to pass into the symmetric differences function
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [5, 6, 7, 8, 9];
+
+// Invoke function symmetric and console.log() the return value
+console.log(symmetric(array1, array2));
