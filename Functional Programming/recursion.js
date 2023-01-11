@@ -16,3 +16,15 @@ function factorial (input) {
 }
 
 console.log(factorial(4))
+
+// POW recurse function takes a base and an exponent and returns a result
+function pow (base, exponent) {
+    function recurse (result = base) {
+        if (exponent === 1) {return result}
+        exponent -= 1
+        return recurse(result *= base)
+    }
+    return recurse ()
+}
+
+console.log(pow(2, 4))
