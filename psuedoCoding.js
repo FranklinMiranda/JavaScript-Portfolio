@@ -4,15 +4,15 @@
 // Description : PseudoCoding is used to descriptively explain coding solutions without writing executable code
 
 // Pseudocoding for Intersection Function that takes an array of arrays and returns an array of elements that are present in all the arrays
-// Intersection that takes a parameter array
+// Define Intersection Function that takes a parameter arrays
 function intersection(arrays) {
-  // First declare a results array that will hold the elements present across all the arrays
+  // Declare a result empty array that will hold the elements present across all the arrays
   const result = [];
   // Next pop one of the arrays of the arrays argument to compare against the other arrays
   const poppedArr = arrays.pop();
   // Next loop over the popped array
   poppedArr.forEach((el) => {
-    // Inside that loop I want to use a reduce function to count how many times each element occurs in the arrays in the array argument
+    // Inside that loop use a reduce function to count how many times each element occurs in the arrays in the array argument
     const total = arrays.reduce((total, element) => {
       if (element.includes(el)) {
         total++;
