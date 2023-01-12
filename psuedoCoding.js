@@ -139,3 +139,5 @@ const array2 = [5, 6, 7, 8, 9];
 
 // Invoke function symmetric and console.log() the return value
 console.log(symmetric(array1, array2));
+
+
