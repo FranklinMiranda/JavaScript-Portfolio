@@ -65,3 +65,5 @@ console.log(counter1());
 // Invoke counter 2 one time
 console.log(counter2());
 console.log(counter2)
+
+
