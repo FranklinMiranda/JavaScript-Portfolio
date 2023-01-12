@@ -191,3 +191,5 @@ function cycleIterator(arr) {
 const threeDayWeekend = ['Friday', 'Saturday', 'Sunday'];
 const getDay = cycleIterator(threeDayWeekend);
 console.log(getDay());
+
+
