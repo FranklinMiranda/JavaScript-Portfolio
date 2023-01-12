@@ -138,5 +138,32 @@ const exponent = after(5, (input) => {
 // Console.log the invocations of the variable until the callback with result is returned
 console.log(exponent(3));
 
+// Function saveOutput - A password protected function that saves the result of a callback and returns the result object when a password is provided
 
+// Define saveOutput that accepts a callback and password parameter
+function saveOutput(call, password) {
+  // Declare a empty object that will save results
+  const result = {};
+  // return an anonymous function that accepts a input
 
+  return function (input) {
+    // If the input is equal to the password then the result object will be returned
+    if (input === password) {
+      return result;
+    }
+    // Else the returned result of the callback with input passed in will be saved on the result object with the input as the key and the return as the value
+    else {
+      result[input] = call(input);
+      return 'Result saved';
+    }
+  };
+}
+
+// Declare a multiply variable and assign to the saveOutput function invoked
+const multiply = saveOutput((input) => {
+  return input * 2;
+}, '12345');
+// Invoke the multiply variable with a input
+console.log(multiply(5));
+// Invoke the multiply variable with the password
+console.log(multiply('12345'));
