@@ -22,7 +22,7 @@ function filterArray(arr, call) {
   // Loop over the array
   for (let i = 0; i < arr.length; i++) {
     // A if statement tests if true is returned from calling the callback on the current array element
-    if (call(arr[i] === true)) {
+    if (call(arr[i]) === true) {
       // If true the current element will be pushed into the result array
       result.push(arr[i]);
     }
@@ -36,3 +36,4 @@ const integerSquareRoot = (n) => Math.sqrt(n) % 1 === 0;
 const over100 = (n) => n > 100;
 const inSqRtOrOver100 = eitherCallback(integerSquareRoot, over100);
 console.log(filterArray(arrOfNum, inSqRtOrOver100));
+
