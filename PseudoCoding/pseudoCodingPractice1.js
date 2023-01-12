@@ -82,3 +82,4 @@ function addByX(input) {
 const addByTwo = addByX(2);
 // console.log() addBy function with a x parameter
 console.log(addByTwo(3));
+
