@@ -65,7 +65,6 @@ console.log(counter1());
 // Invoke counter 2 one time
 console.log(counter2());
 
-
 // Function addByX - a function that returns a function that adds a input by x
 // addByX stores the input variable in the outer function and then access it using closure in the inner function
 
@@ -82,4 +81,62 @@ function addByX(input) {
 const addByTwo = addByX(2);
 // console.log() addBy function with a x parameter
 console.log(addByTwo(3));
+
+// Function once - accepts a callback and performs it once
+
+// Define once function that accepts a callback parameter
+function once(call) {
+  // Declare a counter variable set to 0
+  let counter = 0;
+  // return a anonymous function that accepts a input parameter
+  return function (input) {
+    // If counter variable is not equal to 0 then return a string
+    if (counter !== 0) {
+      return 'This function has been invoked once!';
+    }
+    // Else return the callback with input passed in as an argument
+    else {
+      counter++;
+      return call(input);
+    }
+  };
+}
+
+// Define a variable and set it equal to the invocation of once with a inline callback passed in as argument
+const multiplyByFour = once((input) => {
+  return input * 4;
+});
+// Invoke the variable and console.log the result
+console.log(multiplyByFour(4));
+// Invoke the variable to confirm that it only invokes once
+console.log(multiplyByFour(4));
+
+// Function after - uses closure to save a counter and only triggers the callback after a number of times
+
+// Define function after that takes a threshold and callback parameter
+function after(threshold, call) {
+  // Define a counter variable
+  let counter = 0;
+  // Return a anonymous function that accepts a input parameter
+  return function (input) {
+    // if counter >= threshold then return the callback with the input passed in
+    if (counter >= threshold) {
+      return call(input);
+    }
+    // else return a string
+    else {
+      counter++;
+      return 'The threshold of invocations has not been reached yet!';
+    }
+  };
+}
+
+// Define a variable that is assigned to the evaluated result of after with a threshold and inline call function
+const exponent = after(5, (input) => {
+  return input * input;
+});
+// Console.log the invocations of the variable until the callback with result is returned
+console.log(exponent(3));
+
+
 
