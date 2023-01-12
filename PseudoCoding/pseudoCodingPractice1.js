@@ -64,6 +64,21 @@ console.log(counter1());
 
 // Invoke counter 2 one time
 console.log(counter2());
-console.log(counter2)
 
 
+// Function addByX - a function that returns a function that adds a input by x
+// addByX stores the input variable in the outer function and then access it using closure in the inner function
+
+// Define addByX that accepts one input parameter
+function addByX(input) {
+  // return an anonymous function that accepts a x parameter
+  return function (x) {
+    // return input + x
+    return input + x;
+  };
+}
+
+// Define addBy function that is set equal to the evaluated result of addByX
+const addByTwo = addByX(2);
+// console.log() addBy function with a x parameter
+console.log(addByTwo(3));
