@@ -37,3 +37,31 @@ const over100 = (n) => n > 100;
 const inSqRtOrOver100 = eitherCallback(integerSquareRoot, over100);
 console.log(filterArray(arrOfNum, inSqRtOrOver100));
 
+// Function Counter - A function that counts invocations of the function
+
+// Define counter that accepts no parameters
+function counter() {
+  // Define a counter variable set equal to zero
+  let counter = 0;
+  // Return a anonymous function that accepts no parameters
+  return function () {
+    // Increments Counter by 1
+    counter++;
+    // Returns Counter variable
+    return counter;
+  };
+}
+
+// Define variable counter 1 and set it equal to the invocation of the counter function
+const counter1 = counter();
+// Define variable counter 2 and set it equal to the invocation of the counter function
+const counter2 = counter();
+
+// Invoke counter 1 three times
+console.log(counter1());
+console.log(counter1());
+console.log(counter1());
+
+// Invoke counter 2 one time
+console.log(counter2());
+console.log(counter2)
