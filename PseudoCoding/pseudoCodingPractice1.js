@@ -167,3 +167,27 @@ const multiply = saveOutput((input) => {
 console.log(multiply(5));
 // Invoke the multiply variable with the password
 console.log(multiply('12345'));
+
+// Function cycleIterator - cycles through an array and returns each element ad infinitum
+
+// Define cycleIterator that accepts a array parameter
+function cycleIterator(arr) {
+  // Declare a counter variable set equal to 0
+  let counter = 0;
+  // Return a anonymous function
+  return function () {
+    // If counter === arr.length then set counter to 0
+    if (counter === arr.length) {
+      counter = 0;
+    }
+    // Increment counter by one
+    counter++;
+    // return array at index counter minus 1
+    return arr[counter - 1];
+  };
+}
+
+// Declare a array that contains the elements to cycle through
+const threeDayWeekend = ['Friday', 'Saturday', 'Sunday'];
+const getDay = cycleIterator(threeDayWeekend);
+console.log(getDay());
