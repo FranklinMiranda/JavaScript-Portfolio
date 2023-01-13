@@ -193,3 +193,12 @@ const getDay = cycleIterator(threeDayWeekend);
 console.log(getDay());
 
 
+// Function defineFirstArg - a function that accepts a callback and a first argument and whose returned function accepts a undefined number of arguments 
+
+// Define firstArg function that accepts a call and num
+  // return a anonymous function that accepts a undefined number of arguments
+  // loop over the arguments and perform the call on each element 
+
+const subtract = function(big, small) {return big - small}
+const subFrom20 = defineFirstArg(subtract, 20)
+console.log(subFrom20(5, 1, 3))
