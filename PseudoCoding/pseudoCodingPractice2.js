@@ -17,4 +17,4 @@ function isPrime(num, divisor = 2) {
   return isPrime(num, (divisor += 1));
 }
 
-console.log(isPrime(98));
+console.log(isPrime(4));
