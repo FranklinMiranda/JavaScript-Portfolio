@@ -7,8 +7,10 @@
 
 // Define Function isPrime that accepts two parameters a prime and a divisor
 function isPrime(num, divisor = 2) {
-  if (num === 1) {
-    return true;
+  if (num <= 0) {
+    return false;
+  } else if (num === 1) {
+    return false;
   } else if (num === divisor) {
     return true;
   } else if (num % divisor === 0) {
