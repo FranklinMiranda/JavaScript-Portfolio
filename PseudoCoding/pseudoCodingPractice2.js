@@ -20,3 +20,25 @@ function isPrime(num, divisor = 2) {
 }
 
 console.log(isPrime(4));
+
+// Function Flatten Recursively - This function takes an array and flattens it recursively
+function flattenRecursively(arr) {
+  const result = [];
+
+  function recurse(i, arr, result) {
+    if (i >= arr.length) return;
+
+    if (Array.isArray(arr[i])) {
+      recurse(0, arr[i], result);
+    } else {
+      result.push(arr[i]);
+    }
+
+    recurse(i + 1, arr, result);
+  }
+  recurse(0, arr, result);
+  return result;
+}
+
+console.log(flattenRecursively([1, [2, 3, [4]]])); //-> [1, 2, 3, 4]
+console.log(flattenRecursively([1, {}, [3, [[4]]]])); //-> [1, {}, 3, 4]
