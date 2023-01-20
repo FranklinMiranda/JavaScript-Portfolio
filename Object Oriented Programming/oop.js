@@ -178,8 +178,13 @@ function makePerson(name, age) {
     user.score = score;
     return user;
   }
-  
-  const adminFunctionStore = Object.create(userFunctionStore);
+
+  // Prototype Setter
+  // Using __proto__ adminFunctionStore [[Prototype]] property is set to userFunctionStore
+  // When a property is searched for on adminFunctionStore and not found, it is then searched for on the prototype object
+  const adminFunctionStore = {
+    __proto__: userFunctionStore
+  }
   
   function adminFactory(name, score) {
     const admin = new userFactory(name, score);

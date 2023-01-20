@@ -17,7 +17,7 @@ function PersonConstructor(name, age) {
 PersonConstructor.prototype.greeting = function () {
   return console.log(`Hello ${this.name}`);
 };
-PersonConstructor.prototype.name = 'No Name Provided'
+PersonConstructor.prototype.name = 'No Name Provided';
 
 const franklin = new PersonConstructor('Franklin Miranda', 24);
 const anna = new PersonConstructor();
@@ -31,7 +31,7 @@ franklin.greeting();
 // PersonConstructor creates an anna object and assigns hello method on the created object instance
 anna.hello();
 // anna object is created with no name argument provided so it access the name property on the prototype object using the dunder proto, it does not just automattically access the property
-console.log(anna.__proto__.name)
+console.log(anna.__proto__.name);
 // Anna object is initialized without any provided arguments but still has access to the greeting method from its prototype Object
 anna.greeting();
 
@@ -41,3 +41,11 @@ console.log(franklin.__proto__);
 console.log(PersonConstructor.prototype);
 console.log(PersonConstructor.prototype.constructor);
 console.log(franklin.__proto__ === PersonConstructor.prototype);
+
+// Prototype Setter
+// Assigning __proto__ on a object to another object sets its [[Prototype]] to that object.
+// When searching for a property that is not found, JavaScript then searches on the prototype object, and if not found there then continues up the prototype chain
+const object0 = { name: 'franklin' };
+
+const object1 = { __proto__: object0 };
+console.log(object1.name);
