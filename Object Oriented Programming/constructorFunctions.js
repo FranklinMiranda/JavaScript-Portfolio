@@ -49,3 +49,5 @@ const object0 = { name: 'franklin' };
 
 const object1 = { __proto__: object0 };
 console.log(object1.name);
+
+// Property shawowing is when a property exists on a child object and the parent object. JavaScript access the child object property not the parent. 
