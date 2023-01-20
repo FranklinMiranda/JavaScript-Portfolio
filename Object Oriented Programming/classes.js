@@ -38,3 +38,25 @@ console.log(anna.greeting());
 // anna.__proto__ access the person constructor and anna.__proto__.__proto__ access the prototype object of the person constructor
 console.log(anna.__proto__);
 console.log(anna.__proto__.__proto__);
+
+// Mixins 
+
+class Dog {
+  constructor () {
+    this.legs = 4;
+  }
+  speak() {
+    console.log('Woof!')
+  }
+}
+
+const robotMixin = {
+  skin: 'metal',
+  speak : function () {console.log(`I have ${this.legs} legs and am made of ${this.skin}`)}
+}
+
+let robotFido = new Dog()
+
+robotFido = Object.assign(robotFido, robotMixin)
+
+robotFido.speak()
