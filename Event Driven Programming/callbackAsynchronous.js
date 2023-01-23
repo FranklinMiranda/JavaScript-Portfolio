@@ -14,3 +14,5 @@ clearTimeout(setTimeout(message, 1000));
 
 setInterval(message, 1000);
 clearInterval(setInterval(message, 1000));
+
+// clearTimeout and clearInterval is used inside setTimeout 
