@@ -5,8 +5,11 @@
 
 // Factorial function that calls itself to solve a factorial
 function factorial(input) {
+  // Declare a result equal to input
   let result = input;
+  // Define a recurse Function 
   function recurse(input) {
+    // Use a if statement to test if input is 
     if (input === 0) {
       return result;
     }
