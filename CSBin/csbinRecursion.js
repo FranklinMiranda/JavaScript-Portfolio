@@ -1,10 +1,12 @@
 // Type JavaScript here and click "Run Code" or press Ctrl + s
-console.log('Hello, world!');
+//console.log('Hello, world!');
 
 
 // Challenge 1
 function countdown(n) {
-
+	if (n === 0) {return}
+   console.log(n)
+  return countdown(n - 1)
 }
 
 // To check if you've completed it, uncomment these console.logs!
@@ -13,18 +15,29 @@ function countdown(n) {
 
 
 // Challenge 2
-function sum(array) {
-
+function sum(array, total = 0) {
+  if (array.length === 0) {return total}
+ let num = array.pop()
+ total += num
+  return sum(array, total)
 }
 
 // uncomment these to check your work
-//  console.log(sum([1,1,1])); // -> returns 3
-//  console.log(sum([1,2,3,4,5,6])); // -> returns 21
+ // console.log(sum([1,1,1])); // -> returns 3
+ // console.log(sum([1,2,3,4,5,6])); // -> returns 21
 
 
 // Challenge 3
 function palindrome(string) {
-
+	if (string.length === 1) {return true}
+  else if (string.length === 2 && string[0] === string [1]) {return true}
+  string = string.replace(/[\s\W]/gi, '').toLowerCase()
+  
+  if (string[0] !== string[string.length - 1]) {return false}
+  else {string = string.slice(1, -1)
+       return palindrome(string)}
+  
+  
 }
 
 // console.log(palindrome("Anne, I vote more cars race Rome-to-Vienna")); //-> true
@@ -34,8 +47,12 @@ function palindrome(string) {
 
 // Challenge 4
 
-function isPrime(num) {
-
+function isPrime(num, div = 2) {
+	if (num <= 0) {return false}
+  else if (num === 1) {return false}
+  else if (num === div) {return true}
+  else if (num % div === 0) {return false}
+  else {return isPrime(num, div += 1)}  
 }
 
 // console.log(isPrime(1)); //-> false
@@ -45,8 +62,10 @@ function isPrime(num) {
 
 
 //Challenge 5
-function pathFinder(obj, arr) {
-
+function pathFinder(obj, arr, i = 0) {
+	if (i === arr.length - 1) {return obj[arr[i]]}
+	
+  return pathFinder(obj[arr[i]], arr, i += 1)
 }
 
 // const obj = { first: { second: { third: "finish" } }, second: { third: "wrong" } };
@@ -55,8 +74,13 @@ function pathFinder(obj, arr) {
 
 
 //Challenge 6
-function flattenRecursively(arr) {
-
+function flattenRecursively(arr, result = [], i = 0) {
+	if (i >= arr.length) {return result}
+  
+  if (Array.isArray(arr[i])) {return flattenRecursively(arr[i], result, 0)}
+  else {result.push(arr[i])}
+  
+  return flattenRecursively(arr, result, i + 1)
 }
 
 // console.log(flattenRecursively([1, [2, 3, [4]]])); //-> [1, 2, 3, 4]
@@ -64,8 +88,11 @@ function flattenRecursively(arr) {
 
 
 //Challenge 7
-function findInOrderedSet(arr, target) {
-
+function findInOrderedSet(arr, target, i = 0) {
+	if (i === arr.length) {return false}
+  else if (arr[i] === target) {return true}
+  
+  return findInOrderedSet(arr, target, i + 1)
 }
 
 // const nums = [1, 4, 6, 7, 9, 17, 45];
@@ -75,7 +102,10 @@ function findInOrderedSet(arr, target) {
 
 //Challenge 8
 function countWaysToReachNthStair(n) {
-
+if (n === 0) {return 1}
+else if (n < 0) {return 0}
+  
+  return countWaysToReachNthStair(n - 1) + countWaysToReachNthStair(n - 2)
 }
 
 // console.log(countWaysToReachNthStair(1)) //-> 1 (only one way to climb 1 stair)
@@ -85,7 +115,26 @@ function countWaysToReachNthStair(n) {
 
 //Challenge 9
 function getPermutations(arr) {
-
+	let result = []
+  
+  if (arr.length === 0) {return []}
+  if (arr.length === 1) {return [arr]}
+  
+  for (let i = 0; i < arr.length; i++) {
+    const currentNum = arr[i]
+    const remainingNums = arr.slice(0, i).concat(arr.slice(i + 1))
+    const remainingNumsPermuted = getPermutations(remainingNums)
+    
+    for (let j = 0; j < remainingNumsPermuted.length; j ++) {
+      const permutedArray = [currentNum].concat(remainingNumsPermuted[j])
+     
+      result.push(permutedArray)
+      
+    }
+   
+  }
+   
+  return result
 }
 
 // console.log(getPermutations([1, 2])) //-> [[1, 2], [2, 1]]
@@ -93,43 +142,13 @@ function getPermutations(arr) {
 
 
 //Challenge 10
-function getRangeBetween(x, y) {
-
+function getRangeBetween(x, y, arr = []) {
+	if (y - x === 1) {return arr}
+  
+  x ++
+  arr.push(x)
+  return getRangeBetween(x,y,arr)
 }
 
-// console.log(getRangeBetween(2, 9)) //-> [3, 4, 5, 6, 7, 8]
-// console.log(getRangeBetween(-5, 5)) //-> [-4, -3, -2, 1, 0, 1, 2, 3, 4]
-
-
-Challenge 1
-Write a recursive function countdown that accepts a positive integer n as an input and logs every number from n (inclusive) to 0 (exclusive) to the console.
-Challenge 2
-Write a recursive function sum that calculates the sum of an array of integers.
-Challenge 3
-Write a recursive function palindrome that accepts a string as an input and returns true if that string is a palindrome (the string is the same forward and backwards). The input string may have punctuation and symbols, but that should not affect whether the string is a palindrome.
-Challenge 4
-Write a recursive function isPrime that determines if a number is prime and returns true if it is.
-Challenge 5
-Write a recursive function pathFinder that takes an object and array as inputs and returns the value with the given path.
-const obj = {first:{second:{third:"finish"}}, second:{third:"wrong"}};
-const arr = ["first","second","third"];
-pathFinder(obj,arr);   //-> "finish"
-Challenge 6
-Write a recursive function flattenRecursively that flattens a nested array. Your function should be able to handle varying levels of nesting.
-Challenge 7
-Write a recursive function findInOrderedSet that determines if a number is in an ordered array. Assume the array is sorted. BONUS: Write the function in such a way that fully iterating through the array to check isn't necessary.
-Challenge 8
-There are n stairs. A person standing at the bottom wants to reach the top. The person can climb either 1 or 2 stairs at a time. Write a function countWaysToReachNthStair to count the number of ways the person can reach the top (order does matter). See test cases for examples.
-Challenge 9
-Given a collection of distinct integers, write a function getPermutations to return all possible permutations.
-Input:[1, 2, 3]
-Output:[
-  [1,2,3],
-  [1,3,2],
-  [2,1,3],
-  [2,3,1],
-  [3,1,2],
-  [3,2,1]
-]
-Challenge 10
-Write a function getRangeBetween that returns an array of all integers between values x and y, not including x and y.
+console.log(getRangeBetween(2, 9)) //-> [3, 4, 5, 6, 7, 8]
+console.log(getRangeBetween(-5, 5)) //-> [-4, -3, -2, 1, 0, 1, 2, 3, 4]
