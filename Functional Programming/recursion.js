@@ -4,20 +4,14 @@
 // Description : Recursion is when a function calls itself. It can be used to solve looping problems on closed bounded sets.
 
 // Factorial function that calls itself to solve a factorial
-function factorial(input) {
-  // Declare a result equal to input
-  let result = input;
-  // Define a recurse Function 
-  function recurse(input) {
-    // Use a if statement to test if input is 
-    if (input === 0) {
-      return result;
-    }
+function factorial(input, result = input) {
+  if (input === 0) {
+    return result;
+  } else if (result !== input) {
     result *= input;
-    return recurse((input -= 1));
   }
-  recurse((input -= 1));
-  return result;
+
+  return factorial((input -= 1), result);
 }
 
 console.log(factorial(4));
@@ -34,7 +28,7 @@ function pow(base, exponent) {
   return recurse();
 }
 
-console.log(pow(2, 4));
+// console.log(pow(2, 4));
 
 // Flow function that runs a input through a array of functions recursively and returns the result
 function flow(input, array) {
@@ -61,7 +55,7 @@ function subtract10(num) {
   return num - 10;
 }
 const arrayOfFunctions = [multiplyBy2, add7, modulo4, subtract10];
-console.log(flow(2, arrayOfFunctions));
+// console.log(flow(2, arrayOfFunctions));
 
 // Shuffle Cards recursive function shuffles a deck of cards recursively
 function shuffleCards(arr1, arr2) {
@@ -83,5 +77,4 @@ function shuffleCards(arr1, arr2) {
 
 const topHalf = ['Queen of Diamonds', 'Five of Hearts', 'Ace of Spades', 'Eight of Clubs'];
 const bottomHalf = ['Jack of Hearts', 'Ten of Spades'];
-console.log(shuffleCards(topHalf, bottomHalf));
-
+// console.log(shuffleCards(topHalf, bottomHalf));
