@@ -83,8 +83,8 @@ function flattenRecursively(arr, result = [], i = 0) {
   return flattenRecursively(arr, result, i + 1)
 }
 
-// console.log(flattenRecursively([1, [2, 3, [4]]])); //-> [1, 2, 3, 4]
-// console.log(flattenRecursively([1, {}, [3, [[4]]]])); //-> [1, {}, 3, 4]
+console.log(flattenRecursively([1, [2, 3, [4]]])); //-> [1, 2, 3, 4]
+console.log(flattenRecursively([1, {}, [3, [[4]]]])); //-> [1, {}, 3, 4]
 
 
 //Challenge 7
