@@ -26,30 +26,28 @@ console.log(copyOfTools[0].editor.favorite.mine.name === tools[0].editor.favorit
 */
 
 function deepCopy(input, result = input) {
-    
-  if (Array.isArray(input)) {
+  if (typeof input !== 'object' && !Array.isArray(input)) {
+    return result;
+  } else if (Array.isArray(input)) {
     for (let i = 0; i < input.length; i++) {
       result[i] = input[i];
 
-      return deepCopy(input[i], result[i]);
+      return deepCopy(input[i], result);
     }
   } else if (typeof input === 'object' && !Array.isArray(input)) {
-    
     for (let key in input) {
       result[key] = input[key];
-      return deepCopy(input[key], result[key]);
+      return deepCopy(input[key], result);
     }
   }
 }
 
 const tools = [{ editor: { favorite: { mine: { name: 'vscode' } } } }, { shell: 'zsh' }];
-// deepCopy(tools);
-
-   const copyOfTools = deepCopy(tools);
-   console.log(JSON.stringify(copyOfTools))
-//    console.log(copyOfTools === tools);                                        // -> false
-//    console.log(copyOfTools[0] === tools[0]);                                  // -> false
-//    console.log(copyOfTools[0].editor === tools[0].editor);                    // -> false
-//    console.log(copyOfTools[0].editor.favorite === tools[0].editor.favorite);           // -> false
-//    console.log(copyOfTools[0].editor.favorite.mine === tools[0].editor.favorite.mine);      // -> false
-//    console.log(copyOfTools[0].editor.favorite.mine.name === tools[0].editor.favorite.mine.name); // -> true
+const copyOfTools = tools;
+console.log(JSON.stringify(copyOfTools));
+console.log(copyOfTools === tools); // -> false
+console.log(copyOfTools[0] === tools[0]); // -> false
+console.log(copyOfTools[0].editor === tools[0].editor); // -> false
+console.log(copyOfTools[0].editor.favorite === tools[0].editor.favorite); // -> false
+console.log(copyOfTools[0].editor.favorite.mine === tools[0].editor.favorite.mine); // -> false
+console.log(copyOfTools[0].editor.favorite.mine.name === tools[0].editor.favorite.mine.name); // -> true
