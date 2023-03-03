@@ -5,20 +5,15 @@
 
 // Function Is Prime - A function that returns true false if a number is a prime number
 
-// Define Function isPrime that accepts two parameters a prime and a divisor
-function isPrime(num, divisor = 2) {
-  if (num <= 0) {
-    return false;
-  } else if (num === 1) {
-    return false;
-  } else if (num === divisor) {
-    return true;
-  } else if (num % divisor === 0) {
-    return false;
-  }
-  return isPrime(num, (divisor += 1));
+// Define Function isPrime that accepts two parameters a prime and i
+function isPrime(num, i = 2) {
+  
+  if (num <= 1) {return false}
+ else if (num === i) {return true}
+ else if (num % i === 0) {return false} 
+ 
+ return isPrime(num, i += 1)
 }
-
 console.log(isPrime(4));
 
 // Function Flatten Recursively - This function takes an array and flattens it recursively
