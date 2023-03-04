@@ -37,3 +37,28 @@ function flattenRecursively(arr) {
 
 console.log(flattenRecursively([1, [2, 3, [4]]])); //-> [1, 2, 3, 4]
 console.log(flattenRecursively([1, {}, [3, [[4]]]])); //-> [1, {}, 3, 4]
+
+
+function getPermutations(arr, result = [], i = 0) {
+  if (i >= arr.length) {return result}
+  let totalArr = arr.slice(i).concat(arr.slice(0, i))
+  let remainArr = arr.slice(i).concat(arr.slice(0, i))
+  let currentI = remainArr.shift()
+  
+ 	if (remainArr.length > 1) {
+    let remainArrPerm = getPermutations(remainArr, [], 0)
+    for (let j = 0; j < remainArrPerm.length; j++) {
+      result.push([currentI, ...remainArrPerm[j]])
+    }
+    return getPermutations(arr, result, i +=1)
+  }
+  
+  
+  else if (remainArr.length === 1) {
+    result.push([currentI, ...remainArr], [...remainArr, currentI])
+    return result
+  }
+}
+
+//console.log(getPermutations([1, 2])) //-> [[1, 2], [2, 1]]
+console.log(getPermutations([1, 2, 3, 4])) //-> [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
